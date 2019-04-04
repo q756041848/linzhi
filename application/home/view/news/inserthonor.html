@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- Bootstrap styles -->
+    <link rel="stylesheet" href="__STATIC__/home/news/css/bootstrap.min.css">
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" href="__STATIC__/home/news/css/font-awesome/css/font-awesome.min.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="__STATIC__/home/news/css/admin.css" id="theme-styles">
+    <link rel="stylesheet" href="__STATIC__/home/news/css/layui.css" id="theme-styles">
+    <!-- <link rel="stylesheet" href="__STATIC__/home/news/css/layer.css" id="theme-styles"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/layer/2.3/skin/layer.css"> -->
+    <link rel="stylesheet" href="__STATIC__/home/news/css/layer.css" id="theme-styles">
+    <!-- <script type="text/javascript" src="https://cdn.bootcss.com/jquery.form/4.2.2/jquery.form.js"></script> -->
+    <script src="__STATIC__/home/news/js/jqform.js"></script>
+    <script type="text/javascript" src="__STATIC__/home/news/js/jq2.0.js"></script>
+    <script type="text/javascript" src="__STATIC__/home/news/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/home/news/js/modernizr.js"></script>
+    <script type="text/javascript" src="__STATIC__/home/news/js/layui.js"></script>
+    <!-- <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script> -->
+    <!-- <script type="text/javascript" src="https://cdn.bootcss.com/layer/2.3/layer.js"></script> -->
+    <!-- <script src="https://cdn.bootcss.com/layer/2.2/layer.js"></script> -->
+    <script type="text/javascript" src="__STATIC__/home/news/js/layerjs.js"></script>
+</head>
+
+<body>
+
+    <div id="tbc_03" class="undis" style="height:600px">
+        <div class="layui-card-header">设置我的所获荣誉---仅可以添加三项奖励</div>
+        <div class="layui-card-body" pad15>
+            <form id="inserthonor">
+                <div class="layui-form" lay-filter="">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">奖项名称</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="award_name" id="award_name" lay-verify="award_name" autocomplete="off" class="layui-input">
+                            <input type="hidden" name="sid" lay-verify="sid" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">颁奖单位</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="award_unit" id="award_unit" lay-verify="award_unit" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">获奖时间</label>
+                        <div class="layui-input-inline">
+                            <input type="date" name="award_date" id="award_date" lay-verify="award_date" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button type="button" class="layui-btn" lay-submit="" lay-filter="setmyinfo">确认添加</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+
+</body>
+
+<script>
+    $('.layui-btn').click(function () {
+        var award_name=$('#award_name').val();
+        var award_unit=$('#award_unit').val();
+        var award_date=$('#award_date').val();
+        if(award_name==''){
+            layer.msg('请先填写奖项名称',{time:2000});
+        }else{ 
+            if(award_unit==''){
+                layer.msg('请先填写颁奖单位',{time:2000});
+            }else{
+               if(award_date==''){
+                   layer.msg('请先填写获奖时间',{time:2000});
+               }else{          
+       var val = new FormData($('#inserthonor')[0]);
+        $.ajax({   
+            url: '{:url("inserthonor")}',
+            type: 'post',  
+            data: val,
+            async: false,
+            contentType: false,
+            processData: false,
+            success: function (res) {
+            var result=JSON.parse(res);
+			if(result.code==0){
+                layer.msg(result.msg,{time:2000},function(){
+                    var index = parent.layer.getFrameIndex(window.name);
+                    parent.layer.close(index); //关闭当前页 
+                });
+              
+            }
+            if(result.code==1){
+                    var sta=new Date(result.msg.award_date *1000).toLocaleDateString(); 
+                    var txt1="<tr ids="+result.msg.hid+"><td>"+result.msg.award_name+"</td>"+"<td>"+result.msg.award_unit+"</td>"+"<td>"+sta+"</td>"+"<td>"+'<a> <a onclick="edithonor(\'修改\','+result.msg.hid+',\'\',800,600)" href="javascript:;"><i class="fa fa-edit updates" aria-hidden="true"></i></a><a onclick="experience_del(this,'+result.msg.hid+',\'\',800,600)" href="javascript:;"><i class="fa fa-times" aria-hidden="true"></i></a></a>'+"</td></tr>";
+                var con = $(window.parent.document).find("#honor").after(txt1);
+                var index = parent.layer.getFrameIndex(window.name);
+                parent.layer.close(index); //关闭当前页
+            }
+            }
+
+        })
+                       
+    }
+               
+  }
+}
+      
+
+        
+    })
+</script>
+
+</html>

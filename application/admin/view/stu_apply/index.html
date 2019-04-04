@@ -1,0 +1,80 @@
+{extend name="template/base" /}
+{block name="content"}
+<div class="page-container">
+    {include file="form" /}
+    <div class="cl pd-5 bg-1 bk-gray">
+        <span class="l">
+            {tp:menu menu="delete,recyclebin" /}
+        </span>
+        <span class="r pt-5 pr-5">
+            共有数据 ：<strong>{$count ?? '0'}</strong> 条
+        </span>
+    </div>
+    <table class="table table-border table-bordered table-hover table-bg mt-20">
+        <thead>
+        <tr class="text-c">
+            {include file="th" /}
+             <th width="70">审核</th>
+            <th width="70">操作</th>
+
+        </tr>
+
+        </thead>
+        <tbody>
+        {volist name="list"   id="vo" }
+        <tr class="text-c" >
+            {include file="td" /}
+                <td>
+                      <a class="label label-success radius btn-success"
+                   href="javascript:; "onclick="audit_stu({$vo.id},1),'$vo.serialnumber'" >
+                通过
+                </a>
+
+                <a class="label label-danger radius  btn-danger"
+                   href="javascript:; "onclick="audit_stu({$vo.id},2)">退回</a>
+                </td>
+            <td class="f-14">
+
+                <a class="Hui-iconfont Hui-iconfont-tuwenxiangqing"  
+                    style="text-decoration: none;" 
+                 title="详情" href="javascript:;" onclick="layer_open('待审核详情','/admin/stu_apply/show?id={$vo.id}')"><i class="Hui-iconfont"></i> </a>
+              
+
+                {tp:menu menu='sedit' /}
+                {tp:menu menu='sdelete' /}
+            </td>
+
+        </tr>
+
+        {/volist}
+        </tbody>
+    </table>
+
+    <div class="page-bootstrap">{$page ?? ''}</div>
+</div>
+<script>
+    /**
+     * 审核状态
+     * @param val  通过 未通过
+     * @param id   当前 用户的id
+     */
+    function audit_stu(id,val){
+        var str=val==1?'通过':'退回';
+        $.ajax({
+            url:'status',
+            type:'post',
+            data:{id:id,status:val},
+            success:function () {
+                layer.msg('已'+str,function () {
+                    location.reload();
+                })
+            }
+        })
+    }
+</script>
+{/block}
+
+
+
+
+

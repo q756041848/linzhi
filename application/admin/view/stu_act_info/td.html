@@ -1,0 +1,15 @@
+<td><input type="checkbox" name="id[]" value="{$vo.id}"></td>
+<td>{$vo.id|high_light=$Request.param.id}</td>
+<td>{$vo.name}</td>
+<td style="max-width: 110px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">{$vo.theme}</td>
+<td>{$vo.catname}</td>
+<td style="max-width: 110px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">{$vo.content}</td>
+<td><img width="50px;" height="50px" src="{if $vo.images eq ''}\static\admin\images\5abd0172fb1966040afe7f2e5c313d4d.jpg{else}{$vo.images}{/if}"></td>
+<td>{$vo.grade}</td>
+<td>{if $vo.sec_ass_status eq 0}未审核{else}{$vo.sec_assessor}{/if}</td>
+<td>{if $vo.sec_ass_status eq 0}未审核{else}{$vo.sec_ass_date}{/if}</td>
+<td>
+    <a href="javascript:if(confirm('确认审核吗?')){if !$vo.sec_ass_status}location='/admin/stu_act_info/addedit?id={$vo.id}'{/if}" class="label label-warning radius"{if $vo.sec_ass_status}style="background: green"{/if}>{if $vo.sec_ass_status}已审核{else}未审核{/if}</a>
+</td>
+<td><a class="btn btn-primary radius mr-5" href="javascript:;" onclick="layer_open('活动详情','/admin/stu_act_info/lay?id={$vo.id}','1000px','750px')"><i class="Hui-iconfont"></i> 详情</a></td>
+<td>{$vo.status|get_status}</td>

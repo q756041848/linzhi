@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>学分总换</title>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/css/amazeui.min.css" />
+    <link rel="stylesheet" type="text/css" href="__STATIC__/css/mains.css" />
+
+</head>
+<body>
+<div class="pay">
+    <!--主内容开始编辑-->
+    <div class="tr_recharge">
+        <div class="tr_rechtext">
+            <p class="te_retit"><img src="__STATIC__/images/coin.png" alt="" />总换中心</p>
+            <p>1.☀️是1小时工作时间的虚拟货币，你可以使用☀️购买站内的学分。</p>
+            <p>2.☀️与学分换算为13：1.5，即30☀️=1.5学分，你可以这里进行总换，☀️每次30个起换。</p>
+        </div>
+        <form action="" class="am-form" id="doc-vld-msg">
+            <div class="tr_rechbox">
+                <div class="tr_rechhead">
+                    <img src="__STATIC__/images/ys_head2.jpg" />
+                    <p>总换帐号：
+                        <a>王花花</a>
+                    </p>
+                    <div class="tr_rechheadcion">
+                        <img src="__STATIC__/images/coin.png" alt="" />
+                        <span>当前余额：<span>1000小时</span></span>
+                    </div>
+                </div>
+                <div class="tr_rechli am-form-group">
+                    <ul class="ui-choose am-form-group" id="uc_01">
+                        <li>
+                            <label class="am-radio-inline">
+                                <input type="radio"  value="" name="docVlGender" required data-validation-message="请选择一项充值额度"> 30☀️
+                            </label>
+                        </li>
+                        <li>
+                            <label class="am-radio-inline">
+                                <input type="radio" name="docVlGender" data-validation-message="请选择一项充值额度"> 60☀️
+                            </label>
+                        </li>
+
+                        <li>
+                            <label class="am-radio-inline">
+                                <input type="radio" name="docVlGender" data-validation-message="请选择一项充值额度"> 90☀️
+                            </label>
+                        </li>
+                        <li>
+                            <label class="am-radio-inline">
+                                <input type="radio" name="docVlGender" data-validation-message="请选择一项充值额度"> 其他☀️个数
+                            </label>
+                        </li>
+                    </ul>
+                    <!--<span>1招兵币=1元 10元起充</span>-->
+                </div>
+                <div class="tr_rechoth am-form-group">
+                    <span>总换金额：</span>
+                    <input type="number" min="10" max="10000" value="10.00元" class="othbox" data-validation-message="总换金额范围：30-30000☀️" />
+                    <!--<p>充值金额范围：10-10000元</p>-->
+                </div>
+
+
+            </div>
+            <div class="tr_paybox">
+                <input type="submit" value="确认总换" class="tr_pay am-btn" />
+                <span>温馨提示：志愿者时间只限于在学院中总换学分，遇到问题请拨打联系电话。</span>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript" src="__STATIC__/js/jquery.min.js"></script>
+<script type="text/javascript" src="__STATIC__/js/amazeui.min.js"></script>
+<script type="text/javascript" src="__STATIC__/js/ui-choose.js"></script>
+<script type="text/javascript">
+    // 将所有.ui-choose实例化
+    $('.ui-choose').ui_choose();
+    // uc_01 ul 单选
+    var uc_01 = $('#uc_01').data('ui-choose'); // 取回已实例化的对象
+    uc_01.click = function(index, item) {
+        console.log('click', index, item.text())
+    }
+    uc_01.change = function(index, item) {
+        console.log('change', index, item.text())
+    }
+    $(function() {
+        $('#uc_01 li:eq(3)').click(function() {
+            $('.tr_rechoth').show();
+            $('.tr_rechoth').find("input").attr('required', 'true')
+            $('.rechnum').text('10.00元');
+        })
+        $('#uc_01 li:eq(0)').click(function() {
+            $('.tr_rechoth').hide();
+            $('.rechnum').text('10.00元');
+            $('.othbox').val('');
+        })
+        $('#uc_01 li:eq(1)').click(function() {
+            $('.tr_rechoth').hide();
+            $('.rechnum').text('20.00元');
+            $('.othbox').val('');
+        })
+        $('#uc_01 li:eq(2)').click(function() {
+            $('.tr_rechoth').hide();
+            $('.rechnum').text('50.00元');
+            $('.othbox').val('');
+        })
+        $(document).ready(function() {
+            $('.othbox').on('input propertychange', function() {
+                var num = $(this).val();
+                $('.rechnum').html(num + ".00元");
+            });
+        });
+    })
+
+    $(function() {
+        $('#doc-vld-msg').validator({
+            onValid: function(validity) {
+                $(validity.field).closest('.am-form-group').find('.am-alert').hide();
+            },
+            onInValid: function(validity) {
+                var $field = $(validity.field);
+                var $group = $field.closest('.am-form-group');
+                var $alert = $group.find('.am-alert');
+                // 使用自定义的提示信息 或 插件内置的提示信息
+                var msg = $field.data('validationMessage') || this.getValidationMessage(validity);
+
+                if(!$alert.length) {
+                    $alert = $('<div class="am-alert am-alert-danger"></div>').hide().
+                    appendTo($group);
+                }
+                $alert.html(msg).show();
+            }
+        });
+    });
+
+</script>
+
+</body>
+</html>

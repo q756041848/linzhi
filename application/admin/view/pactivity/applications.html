@@ -1,0 +1,129 @@
+{extend name="template/base" /}
+{block name="content"}
+<link href="__STATIC__/css/bootcss/bootstrap.min.css" rel="stylesheet">
+<style>
+    /*面板大小*/
+    .panel.panel-default {
+        width: 100%;
+        height: 100%;
+        margin: auto;
+    }
+    .btn{padding: 5px}
+
+    /*通过*/
+    .pass{
+        float: right;
+        width: 75px;
+    }
+    /*未通过*/
+    .notpass{
+        float: right;
+        width: 75px;
+    }
+
+    #xinxi{
+        width: 1000px;
+    }
+    #xinxi li{
+        float: left;
+        border-right: 2px solid#848484;
+        text-align: center;
+    }
+
+    #xinxi li:last-child{
+        border: none;
+    }
+</style>
+<div class="panel panel-default"  style="margin-top: 40px;border: none;">
+    <div class="panel-body">
+        <!--页面显示判断-->
+        {if condition="$states eq 1"}
+        <ul class="list-group">
+            <kbd>已招募：{$countnum}/{$num}</kbd>
+            <!--循环遍历-->
+            {foreach as key=>$key  name="$list" id="li"}
+            <li class="list-group-item">
+
+                <!--按钮分割线-->
+                {if condition="$li.status eq 1"}
+                <button class="btn btn-default pass">已通过</button>
+                {else}
+                {if condition="$li.status eq 2"}
+                <button class="btn btn-danger notpass">未通过</button>
+                {else}
+                    <span style="float: right;">
+                        <button class="btn btn-default" onclick="status(1,{$li.id},'通过',{$li.aid},{$li.sid})">通过</button>
+                        <button class="btn btn-danger" onclick="status(2,{$li.id},'退回',{$li.aid},{$li.sid})">退回</button>
+                    </span>
+                {/if}
+                {/if}
+                <!--按钮分割线-->
+                <ul id="xinxi">
+                    <span class="glyphicon glyphicon-user" style="float: left"></span>
+                    <li style="width: 150px">学生姓名 : {$li.name}</li>
+                    <li style="width: 100px">性别 : {$li.sex?'男':'女'}</li>
+                    <li style="width: 150px">学院: {$li.catname0}</li>
+                    <li style="width: 150px">系部: {$li.catname1}</li>
+                    <li style="width: 100px">班级：{$li.catname2}</li>
+                    <li style="width: 250px">申请日期：{:date('Y-m-d h:i:s',$li.filingdate)}</li>
+                </ul>
+                <br>
+                <br>
+            </li>
+            {/foreach}
+
+            <!--分页-->
+            <span style="text-align: center;display: block;">{$page}</span>
+        </ul>
+
+        {else}
+        <h1 style="text-align: center;">暂无申请</h1>
+        {/if}
+    </div>
+</div>
+<script>
+    // function th() {
+    //     $text = prompt("退回原因");
+    // }]
+
+    //val1:退回状态；val2:申请表id；val3:提醒字；val4:活动id；val5:学生id;
+    function status(val,val2,val3,val4,val5) {
+        if (val==2){
+            //退回
+            layer.prompt({title: '退回原因[可以不填]', formType: 2}, function(pass, index){
+                layer.close(index);
+                $.ajax({
+                    'url':'{:url("Pactivity/status")}',
+                    'type':'post',
+                    'data':{reason:pass,status:val,id:val2,aid:val4,sid:val5},
+                    'success':function(result){
+                        if (result==1){
+                            layer.msg('已'+val3,function () {
+                                location.reload();
+                            });
+                        }else{
+                            layer.msg("人数已超过预期");
+                        }
+                    }
+                });
+            });
+        }else {
+            //通过
+            $.ajax({
+                'url':'{:url("Pactivity/status")}',
+                'type':'post',
+                'data':{status:val,id:val2,aid:val4,sid:val5},
+                'success':function(result){
+                    if (result==1){
+                        layer.msg('已'+val3,function () {
+                            location.reload();
+                        });
+                    }else{
+                        layer.msg("人数已超过预期");
+                    }
+                }
+            });
+        }
+    }
+</script>
+{/block}

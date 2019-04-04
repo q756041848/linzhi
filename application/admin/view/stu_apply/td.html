@@ -1,0 +1,15 @@
+<td><input type="checkbox" name="id[]" value="{$vo.id}"></td>
+<td>{$vo.id}</td>
+<td>{$vo.name|high_light=$Request.param.name}</td>
+<td>{$vo.sex?'男':'女'}</td>
+<td>{$vo.catname1}</td>
+<td>{$vo.catname2}</td>
+<td>{$vo.catname3|high_light=$Request.param.class}</td>
+<td>{$vo.post}</td>
+<td>{$vo.phone|high_light=$Request.param.phone}</td>
+<td>{$vo.house}</td>
+<td>{$vo.speciality}</td>
+<td>{$vo.status?'已审核':'<span class="label label-danger radius">未审核</span>'}</td>
+
+
+

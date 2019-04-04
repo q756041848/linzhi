@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>评分</title>
+    <style type="text/css" rel="stylesheet">
+        button{
+            margin: 0;
+            padding: 0;
+            border: 1px solid transparent;
+            outline: none;
+        }
+        .sub{
+            float: right;
+            width: 70px;
+            height: 30px;
+            background-color:#40AFFE;
+            color: #ffffff;
+            border-radius: 10px;
+            border:solid 0.5px #dddddd;
+            margin-right: 20px;
+            font-size: 15px;
+        }
+        .grade{
+            padding: 0;
+            margin: 0 auto;
+        }
+        .grade tr{
+            padding: 0;
+            margin: 0;
+        }
+        .grade tr td{
+            width: 80px;
+        }
+        input[type="radio"]{
+            display:none;
+        }
+        input[type="radio"]+label{
+            position:relative;
+            padding-left:30px;
+            line-height:20px;
+            color:#333;
+            font-weight:normal;
+            margin-left:2px;
+        }
+        label {
+            display:inline-block;
+            max-width:100%;
+            margin-bottom:5px;
+            font-weight:700;
+        }
+        input[type="radio"]+label::before {
+            content:"";
+            width:20px;
+            height:20px;
+            border-radius:20px;
+            border:1px solid #cecece;
+            position:absolute;
+            left:0;
+        }
+        input[type="radio"]:checked+label::after {
+            top:5px;
+            left:5px;
+            content:"";
+            background-color:#58B094;
+            width:12px;
+            height:12px;
+            border-radius:12px;
+            position:absolute;
+            vertical-align:middle;
+        }
+    </style>
+</head>
+<body>
+<!--<form method="post" id="form">-->
+<p style="margin-left: 40px">请评分：</p>
+<table class="grade">
+    <tr>
+        <td>
+            <input type="hidden" name="condition" value="1">
+            <input type="radio" id="A+" value="A+" title="A+" name="grade"{if $coll lt 2}{else}{if $data.condition} disabled="disabled" {/if}{/if}  {if condition="$data.grade eq 'A+'"} checked {/if} >
+            <label for="A+">A+</label>
+        </td>
+        <td>
+            <input type="radio" id="A" value="A" title="A" name="grade" {if $coll lt 2}{else}{if $data.condition} disabled="disabled" {/if}{/if} {if condition="$data.grade eq 'A'"} checked {/if} >
+            <label for="A">A</label>
+        </td>
+        <td>
+            <input type="radio" id="B" value="B" title="B" name="grade" {if $coll lt 2}{else}{if $data.condition} disabled="disabled" {/if}{/if} {if condition="$data.grade eq 'B'"} checked {/if} >
+            <label for="B">B</label>
+        </td>
+        <td>
+            <input type="radio" id="C" value="C" title="C" name="grade" {if $coll lt 2}{else}{if $data.condition} disabled="disabled" {/if}{/if} {if condition="$data.grade eq 'C'"} checked {/if} >
+            <label for="C">C</label>
+        </td>
+        <td>
+            <input type="radio" id="D" value="D" title="D" name="grade" {if $coll lt 2}{else}{if $data.condition} disabled="disabled" {/if}{/if} {if condition="$data.grade eq 'D'"} checked {/if} >
+            <label for="D">D</label>
+        </td>
+    </tr>
+    <tr>
+        <td style="font-size: 13px;width: 120px;color: #f00">{if $coll lt 2}{else}{if $data.condition} 只能修改一次成绩 {/if}{/if}</td>
+    </tr>
+</table>
+<br>
+<br>
+<br>
+<button type="submit" class="sub" onclick="sub('{$data.id}')">确定</button>
+</body>
+<script type="text/javascript" src="/static/admin/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="/static/admin/lib/layer/2.4/layer.js"></script>
+<script>
+    function sub(id){
+        var grade=$('input:radio[name="grade"]:checked').val();
+        $.ajax({
+            url:'{:url("StuActInfo/grade_check")}',
+            type:'post',
+            data:{id:id,grade:grade},
+            success:function(res){
+//                alert(res);eixt;
+                var index = parent.layer.getFrameIndex(window.name);
+                parent.location.reload();
+                parent.layer.close(index);
+            }
+        });
+    }
+</script>
+</html>

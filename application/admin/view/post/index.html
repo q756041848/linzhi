@@ -1,0 +1,113 @@
+{extend name="template/base" /}
+{block name="content"}
+<div class="page-container">
+    {include file="form" /}
+    <div class="cl pd-5 bg-1 bk-gray">
+        <span class="l">
+            {tp:menu menu="add,forbid,resume,delete,recyclebin" /}
+        </span>
+        <span class="r pt-5 pr-5">
+            共有数据 ：<strong></strong> 条
+        </span>
+    </div>
+    <table class="table table-border table-bordered table-hover table-bg mt-20">
+        <thead>
+        <tr class="text-c">
+            {include file="th" /}
+            <th width="120">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        {volist name="clist" id="vo"}
+        <tr class="text-c" cid='{$vo.id}' fid='{$vo.pid}'>
+            <!--{include file="td" /}-->
+            <td><input type="checkbox" name="id[]" value="{$vo.id}"></td>
+         
+            <td>{$vo.id|high_light=$Request.param.id}</td>
+            <td>
+                <i class="Hui-iconfont x-show" status='true'>&#xe6a1;</i>
+                &nbsp;&nbsp;&nbsp;{$vo.pname|high_light=$Request.param.pname}
+            </td>
+            <td>{$vo.describe|high_light=$Request.param.describe}</td>
+            <td></td>
+            <td class="f-14">
+                {$vo.status|show_status=$vo.id}
+                {tp:menu menu='sedit' /}
+                {tp:menu menu='sdelete' /}
+            </td>
+        </tr>
+        {volist name="$vo['secondlist']" id="sec"}
+        <tr class="text-c" cid='{$sec.id}' fid='{$sec.pid}'>
+            <td><input type="checkbox" name="id[]" value="{$sec.id}"></td>
+           
+            <td>{$sec.id|high_light=$Request.param.id}</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <i class="Hui-iconfont x-show" status='true'>&#xe6a1;</i>
+                &nbsp;&nbsp;&nbsp;{$sec.pname|high_light=$Request.param.pname}
+            </td>
+            <td>{$sec.describe|high_light=$Request.param.describe}</td>
+             <td></td>
+            <td class="f-14">
+                {$sec.status|show_status=$sec.id}
+                {tp:menu menu='sedit' /}
+                {tp:menu menu='mdelete' /}
+            </td>
+        </tr>
+        {volist name="$sec['thirdlist']" id="thir"}
+        <tr class="text-c" cid='{$thir.id}' fid='{$thir.pid}' ppid='{$vo.id}'>
+            <td><input type="checkbox" name="id[]" value="{$thir.id}"></td>
+        
+            <td>{$thir.id|high_light=$Request.param.id}</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                 |----{$thir.pname|high_light=$Request.param.pname}</td>
+            <td>{$thir.describe|high_light=$Request.param.describe}</td>
+            <td></td>
+            <td class="f-14">
+                {$thir.status|show_status=$thir.id}
+                {tp:menu menu='sedit' /}
+                {tp:menu menu='ndelete' /}
+            </td>
+        </tr>
+        {/volist}
+        {/volist}
+        {/volist}
+        </tbody>
+    </table>
+    <div class="page-bootstrap"> </div>
+
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript">
+         // 栏目多级显示效果
+    $('.x-show').click(function () {
+        if($(this).attr('status')=='true'){
+            $(this).html('&#xe600;'); 
+            $(this).attr('status','false');
+            cateId = $(this).parents('tr').attr('cid'); 
+
+            $("tbody tr[fid="+cateId+"]").fadeOut().find('.x-show').attr('status','false');
+            $("tbody tr[ppid="+cateId+"]").fadeOut();
+       }else{
+            cateIds = [];
+            $(this).html('&#xe6a1;');
+            $(this).attr('status','true');
+            cateId = $(this).parents('tr').attr('cid');
+            getCateId(cateId);
+            for (var i in cateIds) {
+                $("tbody tr[cid="+cateIds[i]+"]").fadeIn().find('.x-show').html('&#xe6a1;').attr('status','true');
+            }
+       }
+    })
+
+var cateIds = [];
+function getCateId(cateId) {
+    
+    $("tbody tr[fid="+cateId+"]").each(function(index, el) {
+        id = $(el).attr('cid');
+        cateIds.push(id);
+        getCateId(id);
+    });
+}
+    </script>
+</div>
+{/block}
+

@@ -1,0 +1,78 @@
+{extend name="template/base" /}
+{block name="content"}
+<style>
+    .btn{
+        border-radius: 4px;
+    }
+    .btn-default {
+        background-color: #fff;
+        border-color: #ddd;
+        width: 100%;
+        border-radius: 4px;
+    }
+    #form {
+        margin-top: 50px;
+    }
+</style>
+<div class="page-container">
+    {include file="form" /}
+    <div class="cl pd-5 bg-1 bk-gray">
+        <span class="l">
+            {if condition="$quanxian eq 2"}
+                {tp:menu menu="delete,recyclebin" /}
+            {/if}
+        </span>
+        <span class="r pt-5 pr-5">
+            共有数据 ：<strong>{$count ?? '0'}</strong> 条
+        </span>
+    </div>
+    {if condition="$count > 0"}
+    <table class="table table-border table-bordered table-hover table-bg mt-20">
+        <thead>
+        <tr class="text-c">
+            {include file="th" /}
+            {if condition="$quanxian eq 2"}<th width="70">操作</th>{/if}
+        </tr>
+        </thead>
+        <tbody>
+        {volist as key=>$key name="list" id="vo"}
+        <tr class="text-c" id="{$vo.id}">
+            {include file="td" /}
+            <td class="f-14">
+                {if condition="$quanxian eq 2"}
+                    <!--被删除则显示恢复，未被删除显示删除-->
+                    {if condition="$stu eq 0"}
+                    <a title="删除" href="javascript:;" onclick="ldel(this,'{$vo.id}')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a>
+                    {else}
+                    <!--<a title="恢复" href="javascript:;" onclick="huifu(this,'{$vo.id}')"  class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a>-->
+                    {$vo.isdelete|show_status=$vo.id}
+                {/if}
+                {/if}
+            </td>
+        </tr>
+        {/volist}
+        </tbody>
+    </table>
+    <div class="page-bootstrap">{$page ?? ''}</div>
+    {else}
+    <h1 style="text-align: center;">暂无活动</h1>
+    {/if}
+</div>
+<script>
+    function ldel(obj, id) {
+        layer.confirm('确认删除当前数据吗?',function (index) {
+            $.ajax({
+                url:"{:url('ldel')}",
+                type:'post',
+                data:{id:id},
+                success:function (res) {
+                    layer.msg('已删除!', {icon: 1, time: 1000});
+                    // $("#id").remove();
+                    location.reload()
+                }
+                });
+    });
+    };
+</script>
+{/block}
+

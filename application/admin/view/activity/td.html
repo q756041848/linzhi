@@ -1,0 +1,25 @@
+<td><input type="checkbox" name="id[]" value="{$vo.id}"></td>
+<td>{$key+1}</td>
+<td>{$vo.theme|high_light=$Request.param.theme}</td>
+<td>{$vo.unit}</td>
+<td>{$vo.address}</td>
+<td>{:date('Y-m-d H:i:s',$vo.start_time)}</td>
+<td>{:date('Y-m-d H:i:s',$vo.over_time)}</td>
+<td>
+    {switch $vo.status}
+    {case '0'}审核中{/case}
+    {case 1}审核通过{/case}
+    {case 2}已发布{/case}
+    {case 3}
+    {if condition="$quanxian eq 1"}
+    <button class="btn btn-default" onclick="layer_open('评分','pingfen/id/{$vo.id}','600px','200px')">点击评分</button>
+    {else}
+    活动已结束
+    {/if}
+    {/case}
+    {case 4}审核未通过{/case}
+    {case 5}已撤回{/case}
+    {/switch}
+</td>
+
+<td><button class="btn btn-default" onclick="layer_open('详情页','table/id/{$vo.id}','600px','600px')">查看</button></td>

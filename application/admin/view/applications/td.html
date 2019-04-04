@@ -1,0 +1,16 @@
+<td><input type="checkbox" name="id[]" value="{$vo.id}"></td>
+<td>{$vo.id}</td>
+<td>{$vo.a_id}</td>
+<td>{$vo.sid}</td>
+<td>{$vo.filingdate}</td>
+<td>
+    {if condition="$vo.status eq 2"}
+    <button type="button" class="btn btn-success">已通过</button>
+    {/if}
+    {if condition="$vo.status eq 1"}
+    <button type="button" class="btn btn-warning">待审核</button>
+    {/if}
+</td>
+<td>{$vo.auditor}</td>
+<td>{$vo.moddate}</td>
+<td>{$vo.reason}</td>

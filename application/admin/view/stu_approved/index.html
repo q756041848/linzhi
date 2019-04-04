@@ -1,0 +1,73 @@
+{extend name="template/base" /}
+{block name="content"}
+<div class="page-container">
+    {include file="form" /}
+    <div class="cl pd-5 bg-1 bk-gray">
+        <span class="l">
+          
+        </span>
+        <span class="r pt-5 pr-5">
+            共有数据 ：<strong>{$count ?? '0'}</strong> 条
+        </span>
+    </div>
+    <table class="table table-border table-bordered table-hover table-bg mt-20">
+        <thead>
+        <tr class="text-c">
+            {include file="th" /}
+            <th width="70">学分</th>
+            <th width="70">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        {volist name="list"   id="vo" }
+        <tr class="text-c" >
+            {include file="td" /}
+            <td>
+                <a class="btn btn-warning  radius mr-5" href="javascript:;" onclick="layer_open('学分兑换','/admin/stu_approved/exchange/?id={$vo.id}')">
+                    <i class="Hui-iconfont"></i>兑换</a>
+            </td>
+            <td class="f-14">
+            
+                
+                     <a class="Hui-iconfont Hui-iconfont-tuwenxiangqing"  
+                    style="text-decoration: none;" 
+                 title="详情" href="javascript:;" onclick="layer_open('待审核详情','/admin/stu_approved/show?id={$vo.id}')"><i class="Hui-iconfont"></i> </a>
+
+                {tp:menu menu='sedit' /}
+              
+            </td>
+        </tr>
+
+        {/volist}
+        </tbody>
+    </table>
+
+    <div class="page-bootstrap">{$page ?? ''}</div>
+</div>
+<script>
+    /**
+     * 审核状态
+     * @param val  通过 未通过
+     * @param id   当前 用户的id
+     * @param title   备注
+     */
+    function audit_stu(val,id,title){
+        $.ajax({
+            url:'status',
+            type:'post',
+            data:{status:val,id:id},
+            success:function () {
+                layer.msg('已'+title,function () {
+                    location.reload();
+                })
+            }
+        })
+    }
+
+</script>
+{/block}
+
+
+
+
+

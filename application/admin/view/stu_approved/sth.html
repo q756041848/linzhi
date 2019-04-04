@@ -1,0 +1,233 @@
+<div xmlns="" class="page">
+    <div class="all_wrap">
+        <table class="resume_box">
+            <tbody>
+            <tr>
+                <td class="infomation_r">
+                    <div class="top">
+                        <p class="picture"><img src="{$vo.photo}" width="140" height="148"></p>
+                        <p class="name">{$vo.name}</p>
+                        <p class="posi"><a class="red">{$vo.status?'已审核':'未审核'}</a></p>
+                    </div>
+                    <table class="border_b2">
+                        <tbody>
+                        <tr class="title">
+                            <td class="title_iconl" valign="middle"><img src="__STATIC__/images/renwu.png" width="25"
+                                                                         height="25"></td>
+                            <td class="title_txt_b black"><span>个人基本信息</span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="mes_boxl">
+                        <table class="mes_l">
+                            <tbody>
+                            <tr class="per_list">
+                                <td><span class="black">性别：</span></td>
+                                <td><span class=" black">{$vo.sex?'男':'女'}</span></td>
+                            </tr>
+                            <tr class="per_list">
+                                <td><span class="black">学院：</span></td>
+                                <td><span class=" black">{$vo.catname1}</span></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table class="mes_l">
+                            <tbody>
+                            <tr class="per_list">
+                                <td class="dir"><span class="black">所在系：</span></td>
+                                <td class="limit1"><span class="black">{$vo.catname2}</span></td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="mes_l">
+                            <tbody>
+                            <tr class="per_list">
+                                <td class="dir"><span class="black">班级：</span></td>
+                                <td class="limit2"><span class="black">{$vo.catname3}</span></td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="mes_l">
+                            <tbody>
+                            <tr class="per_list">
+                                <td class="dir"><span class="black">学生编号：</span></td>
+                                <td class="limit2"><span class="black">            {$vo.serialnumber}</span></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table class="mes_l">
+                            <tbody>
+                            <tr class="per_list">
+                                <td class="dir"><span class="black">职位：</span></td>
+                                <td class="limit1"><span class="black">{$vo.post}</span></td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="mes_l">
+                            <tbody>
+                            <tr class="per_list">
+                                <td class="dir"><span class="black">特长：</span></td>
+                                <td class="limit1"><span class="black">{$vo.speciality}</span></td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+
+                        <table class="mes_l">
+                            <tbody>
+                            <tr class="per_list">
+                                <td class="dir"><span class="black">联系方式：</span></td>
+                                <td class="limit1"><span class="black">{$vo.phone}</span></td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="mes_l">
+                            <tbody>
+                            <tr class="per_list">
+                                <td class="dir"><span class="black">所在地:</span></td>
+                                <td class="limit1"><span class="black">     {$vo.house}</span></td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                    <div class="mes_boxl">
+                        <table class="mes_l">
+                            <tbody>
+
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="mes_boxl">
+                        <table class="mes_l">
+                            <tbody>
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+
+                <td class="infomation_l2">
+
+                    <table class="per_title top">
+                        <tbody>
+                        <tr>
+                            <td class="title_icon" valign="middle"><img
+                                    src="https://img03.51jobcdn.com/im/2017/resumetemplate/xsl/icon2_type2.png" alt="工作"
+                                    width="17" height="16"></td>
+                            <td width="340"><p class="title_txt_b">工作</p></td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+
+                    {foreach name="$vo['exper']" item='vo1' }
+                    <div class="mes_r">
+                        <table>
+                            <tbody>
+                            <tr class="info_list">
+                                <td class="edu"><span class="black">工作地区：</span></td>
+                                <td class="edu_a"><span class="black">{$vo1.area}</span></td>
+
+                                <td class="edu"><span class="black">结束时间：</span></td>
+                                <td class="reu"><span class="black">{$vo1.starttime||date='Y-m-d',###}</span></td>
+
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table>
+                            <tbody>
+                            <tr class="info_list">
+                                <td class="edu"><span class="black">工作职务：</span></td>
+                                <td class="edu_a"><span class="black">{$vo1.Jobduties}</span></td>
+
+                                <td class="edu"><span class="black">开始时间：</span></td>
+                                <td class="reu "><span class="black">{$vo1.starttime||date='Y-m-d',###}</span></td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                        <table>
+                            <tbody>
+                            <tr class="info_list">
+                                <td class="edu">
+                                    <span class="black">公司名称：</span>
+                                </td>
+                                <td class="black limit">
+                                    <span>{$vo1.company}</span>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                    {/foreach}
+
+
+                    <div class="mes_r"><p class="in"></p></div>
+
+                    <table class="per_title top">
+                        <tbody>
+                        <tr>
+                            <td class="title_icon" valign="middle"><img
+                                    src="https://img03.51jobcdn.com/im/2017/resumetemplate/xsl/icon3_type2.png"
+                                    alt="个人经历" width="17" height="16"></td>
+                            <td width="340"><p class="title_txt_b black">所获荣誉</p></td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+
+                    {foreach name="$vo['honor']" item='vo2' }
+                    <div class="mes_r">
+                        <table>
+                            <tbody>
+                            <tr class="info_list">
+                                <td class="edu"><span class="black">奖项名称：</span></td>
+                                <td class="exp"><span class="black">{$vo2.award_name}</span></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="mes_r">
+                        <table>
+                            <tbody>
+                            <tr class="info_list">
+                                <td class="edu"><span class="black">颁奖单位：</span></td>
+                                <td class="exp"><span class="black">{$vo2.award_unit}</span></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mes_r">
+                        <table>
+                            <tbody>
+                            <tr class="info_list">
+                                <td class="edu"><span class="black">获奖日期：</span></td>
+                                <td class="exp"><span class="black">{$vo2.award_date}</span></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mes_r">
+
+                    </div>
+                    {/foreach}
+
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div></body></html>
+
+

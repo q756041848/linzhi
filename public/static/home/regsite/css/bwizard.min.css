@@ -1,0 +1,240 @@
+﻿.bwizard {
+	position: relative
+}
+
+.bwizard .well {
+	margin: 3px 0
+}
+
+.bwizard-steps {
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	background: #fff
+}
+
+.bwizard-steps li {
+	display: inline-block;
+	position: relative;
+	margin-right: 5px;
+	line-height: 18px;
+	list-style: none;
+	padding: 12px 17px 10px 30px;
+	background: #efefef;
+	zoom: 1;
+	*display: inline;
+	*padding-left: 17px
+}
+
+.bwizard-steps li:first-child {
+	-moz-border-radius: 4px 0 0 4px;
+	-webkit-border-radius: 4px 0 0 4px;
+	border-radius: 4px 0 0 4px;
+	padding-left: 12px
+}
+
+.bwizard-steps li:first-child:before {
+	border: 0
+}
+
+.bwizard-steps li:last-child {
+	-moz-border-radius: 0 4px 4px 0;
+	-webkit-border-radius: 0 4px 4px 0;
+	border-radius: 0 4px 4px 0;
+	margin-right: 0
+}
+
+.bwizard-steps li:last-child:after {
+	border: 0
+}
+
+.bwizard-steps li:before {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 0;
+	width: 0;
+	border-bottom: 20px inset transparent;
+	border-left: 20px solid #fff;
+	border-top: 20px inset transparent;
+	content: ""
+}
+
+.bwizard-steps li:after {
+	position: absolute;
+	right: -20px;
+	top: 0;
+	height: 0;
+	width: 0;
+	border-bottom: 20px inset transparent;
+	border-left: 20px solid #efefef;
+	border-top: 20px inset transparent;
+	content: "";
+	z-index: 2
+}
+
+.bwizard-steps .label {
+	margin: 0 5px 0 0;
+	padding: 1px 5px 2px;
+	position: relative;
+	top: -1px
+}
+
+.bwizard-steps .active {
+	color: #fff;
+	background: #007acc
+}
+
+.bwizard-steps .active:after {
+	border-left-color: #007acc
+}
+
+.bwizard-steps a {
+	color: #333
+}
+
+.bwizard-steps .active a {
+	color: #fff;
+	cursor: default
+}
+
+.bwizard-steps a:hover {
+	text-decoration: none
+}
+
+.bwizard-steps.clickable li:not(.active) {
+	cursor: pointer
+}
+
+.bwizard-steps.clickable li:hover:not(.active) {
+	background: #ccc
+}
+
+.bwizard-steps.clickable li:hover:not(.active) a {
+	color: #08c
+}
+
+.bwizard-steps.clickable li:hover:not(.active):after {
+	border-left-color: #ccc
+}
+
+@media(max-width:480px) {
+	.bwizard-steps li,
+	.bwizard-steps li.active,
+	.bwizard-steps li:first-child,
+	.bwizard-steps li:last-child {
+		background-color: transparent;
+		padding: 0;
+		margin-right: 0
+	}
+	.bwizard-steps li:after,
+	.bwizard-steps li:before {
+		border: 0
+	}
+}
+.container{
+	width: 50%;
+	margin:  0 auto;
+}
+.inputsbox{
+	width: 700px;
+	height: 50px;
+	
+}
+.inputsbox label{
+	width: 100px;
+	text-align: justify;
+	line-height: 35px;
+}
+.lab{
+	padding-bottom: 50px;
+}
+.inputsbox label,input{
+	float: left;
+}
+.labbox{
+	padding-top: 6px;
+}
+
+.sub{
+    background-color: #007acc; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+.sub_a{
+    background-color: #007acc; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.sub_b{
+    background-color: #007acc; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: right;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.inputsbox select{
+	width:100px;
+}
+
+.bg{
+	width: 100%;
+	height: 80px;
+	background-color: #f5f5f5;
+	margin: 0;
+	padding: 0;
+	clear: both;
+}
+.bgwen{
+	width: 500px;
+	height: 80px;
+	/* border:1px solid #000; */
+	margin-left: 100px;
+	text-align: center;
+	line-height: 80px;
+	font-size: 35px;
+	color: #007acc;
+}
+
+#beizhu{
+	width: 500px;
+	height: 10px;
+	border: none;
+	color: #f00;
+}
+.tishi{
+	float: left;
+	width: 300px;
+	height: 40px;
+	border: 1px solid #333;
+	border: 0px solid ;
+	line-height: 40px;
+	font-size: 15px;
+} 

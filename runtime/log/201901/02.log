@@ -1,0 +1,3509 @@
+[ 2019-01-02T19:44:52+08:00 ] 127.0.0.1 127.0.0.1 GET /
+[ log ] www.xlz.com/ [运行时间：21.897035s][吞吐率：0.05req/s] [内存消耗：2,243.88kb] [文件加载：54]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->Index[ D:\phpStudy\WWW\xlz\application\home\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] �������ӷ���һ��ʱ���û����ȷ�𸴻����ӵ�����û�з�Ӧ�����ӳ���ʧ�ܡ�
+[D:\phpStudy\WWW\xlz\thinkphp\library\think\db\Connection.php:300]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:31:31+08:00 ] 127.0.0.1 127.0.0.1 GET /
+[ log ] www.xlz.com/ [运行时间：0.433420s][吞吐率：2.31req/s] [内存消耗：2,505.30kb] [文件加载：56]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->Index[ D:\phpStudy\WWW\xlz\application\home\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\xlz\public/../application/home\view\index\index.html [ array (
+  0 => 'showpage',
+  1 => 'list',
+  2 => 'tags',
+  3 => 'list2',
+  4 => 'se',
+  5 => 'greatpeople',
+  6 => 'a',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.064185s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_past_act` [ RunTime:0.028447s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_past_act` WHERE  (  status=1 )  AND (  isdelete=0 ) LIMIT 1 [ RunTime:0.018622s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_past_act` WHERE  (  status=1 )  AND (  isdelete=0 ) ORDER BY pv desc LIMIT 0,8 [ RunTime:0.001443s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012128s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_past_act` WHERE  (  status=1 )  AND (  isdelete=0 ) LIMIT 1 [ RunTime:0.001418s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_past_act` WHERE  (  status=1 )  AND (  isdelete=0 ) ORDER BY id desc LIMIT 0,20 [ RunTime:0.002836s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005101s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_stu_act_info` [ RunTime:0.022872s ]
+[ sql ] [ SQL ] SELECT `s`.*,`sa`.`name`,`photo`,`ac`.`theme` FROM `lz_stu_act_info` `s` INNER JOIN `lz_activity` `ac` ON `s`.`aid`=`ac`.`id` INNER JOIN `lz_stu_apply` `sa` ON `sa`.`id`=`s`.`sid` GROUP BY s.sid HAVING count(s.grade)>=3 and grade="A+" [ RunTime:0.050861s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012072s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_stu_apply` [ RunTime:0.020511s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_stu_apply` WHERE  (  status=1 )  AND (  id=0 ) [ RunTime:0.001385s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:31:31+08:00 ] 127.0.0.1 127.0.0.1 GET /uploads/20181224170200.png
+[ log ] www.xlz.com/uploads/20181224170200.png [运行时间：0.056775s][吞吐率：17.61req/s] [内存消耗：1,196.98kb] [文件加载：40]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20181224170200.png',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2019-01-02T20:31:31+08:00 ] 127.0.0.1 127.0.0.1 GET /uploads/20181225095421.png
+[ log ] www.xlz.com/uploads/20181225095421.png [运行时间：0.031255s][吞吐率：31.99req/s] [内存消耗：1,196.92kb] [文件加载：40]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20181225095421.png',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2019-01-02T20:31:31+08:00 ] 127.0.0.1 127.0.0.1 GET /uploads/20181225082435.png
+[ log ] www.xlz.com/uploads/20181225082435.png [运行时间：0.034477s][吞吐率：29.00req/s] [内存消耗：1,196.92kb] [文件加载：40]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20181225082435.png',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2019-01-02T20:31:31+08:00 ] 127.0.0.1 127.0.0.1 GET /uploads/20181225075316.png
+[ log ] www.xlz.com/uploads/20181225075316.png [运行时间：0.038796s][吞吐率：25.78req/s] [内存消耗：1,196.92kb] [文件加载：40]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20181225075316.png',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2019-01-02T20:31:31+08:00 ] 127.0.0.1 127.0.0.1 GET /uploads/20181225095311.png
+[ log ] www.xlz.com/uploads/20181225095311.png [运行时间：0.028530s][吞吐率：35.05req/s] [内存消耗：1,196.92kb] [文件加载：40]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20181225095311.png',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2019-01-02T20:31:31+08:00 ] 127.0.0.1 127.0.0.1 GET /static../..20181224201340
+[ log ] www.xlz.com/static../..20181224201340 [运行时间：0.027516s][吞吐率：36.34req/s] [内存消耗：1,196.84kb] [文件加载：40]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => '..20181224201340',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2019-01-02T20:31:31+08:00 ] 127.0.0.1 127.0.0.1 GET /uploads/20181224170200.png
+[ log ] www.xlz.com/uploads/20181224170200.png [运行时间：0.034112s][吞吐率：29.32req/s] [内存消耗：1,196.92kb] [文件加载：40]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20181224170200.png',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2019-01-02T20:31:31+08:00 ] 127.0.0.1 127.0.0.1 GET /uploads/20181225095421.png
+[ log ] www.xlz.com/uploads/20181225095421.png [运行时间：0.032221s][吞吐率：31.04req/s] [内存消耗：1,196.92kb] [文件加载：40]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20181225095421.png',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2019-01-02T20:31:31+08:00 ] 127.0.0.1 127.0.0.1 GET /static../..20181224201340
+[ log ] www.xlz.com/static../..20181224201340 [运行时间：0.029514s][吞吐率：33.88req/s] [内存消耗：1,196.84kb] [文件加载：40]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => '..20181224201340',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2019-01-02T20:31:31+08:00 ] 127.0.0.1 127.0.0.1 GET /uploads/20181225082435.png
+[ log ] www.xlz.com/uploads/20181225082435.png [运行时间：0.036372s][吞吐率：27.49req/s] [内存消耗：1,196.92kb] [文件加载：40]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20181225082435.png',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2019-01-02T20:31:31+08:00 ] 127.0.0.1 127.0.0.1 GET /uploads/20181225075316.png
+[ log ] www.xlz.com/uploads/20181225075316.png [运行时间：0.034545s][吞吐率：28.95req/s] [内存消耗：1,196.92kb] [文件加载：40]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20181225075316.png',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2019-01-02T20:31:31+08:00 ] 127.0.0.1 127.0.0.1 GET /uploads/20181225095311.png
+[ log ] www.xlz.com/uploads/20181225095311.png [运行时间：0.030167s][吞吐率：33.15req/s] [内存消耗：1,196.92kb] [文件加载：40]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20181225095311.png',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2019-01-02T20:31:36+08:00 ] 127.0.0.1 127.0.0.1 GET /home/registe/index/a/1.html
+[ log ] www.xlz.com/home/registe/index/a/1.html [运行时间：0.401470s][吞吐率：2.49req/s] [内存消耗：2,672.04kb] [文件加载：53]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'registe',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+  'a' => '1',
+)
+[ info ] [ RUN ] app\home\controller\Registe->index[ D:\phpStudy\WWW\xlz\application\home\controller\Registe.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\xlz\public/../application/home\view\registe\index.html [ array (
+  0 => 'list',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012906s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_teaching` [ RunTime:0.021529s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_teaching` WHERE  (  pid=0 )  AND (  id>1 ) [ RunTime:0.026129s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011916s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `lz_teaching` WHERE  (  pid=2 ) [ RunTime:0.001415s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012864s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `lz_teaching` WHERE  (  pid=29 ) [ RunTime:0.001470s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012260s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `lz_teaching` WHERE  (  pid=30 ) [ RunTime:0.000995s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012887s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `lz_teaching` WHERE  (  pid=3 ) [ RunTime:0.001018s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011967s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `lz_teaching` WHERE  (  pid=7 ) [ RunTime:0.001332s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011953s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `lz_teaching` WHERE  (  pid=16 ) [ RunTime:0.001191s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004026s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `lz_teaching` WHERE  (  pid=4 ) [ RunTime:0.001944s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004231s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `lz_teaching` WHERE  (  pid=8 ) [ RunTime:0.001616s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003482s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `lz_teaching` WHERE  (  pid=18 ) [ RunTime:0.001170s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012253s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `lz_teaching` WHERE  (  pid=5 ) [ RunTime:0.001526s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003508s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `lz_teaching` WHERE  (  pid=9 ) [ RunTime:0.000798s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012542s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `lz_teaching` WHERE  (  pid=20 ) [ RunTime:0.001398s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012072s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `lz_teaching` WHERE  (  pid=6 ) [ RunTime:0.001136s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012326s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `lz_teaching` WHERE  (  pid=21 ) [ RunTime:0.000881s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003612s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `lz_teaching` WHERE  (  pid=22 ) [ RunTime:0.001038s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012872s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `lz_teaching` WHERE  (  pid=14 ) [ RunTime:0.001105s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012375s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `lz_teaching` WHERE  (  pid=15 ) [ RunTime:0.001407s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011833s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `lz_teaching` WHERE  (  pid=23 ) [ RunTime:0.001490s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:31:36+08:00 ] 127.0.0.1 127.0.0.1 GET /static/home/regsite/js/skin/layer.css
+[ log ] www.xlz.com/static/home/regsite/js/skin/layer.css [运行时间：0.038003s][吞吐率：26.31req/s] [内存消耗：1,197.24kb] [文件加载：40]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'home',
+    2 => 'regsite',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://www.xlz.com/home/registe/index/a/1.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'skin',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2019-01-02T20:31:36+08:00 ] 127.0.0.1 127.0.0.1 GET /captcha.html
+[ log ] www.xlz.com/captcha.html [运行时间：0.180378s][吞吐率：5.54req/s] [内存消耗：1,223.91kb] [文件加载：39]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/home/registe/index/a/1.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '',
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ D:\phpStudy\WWW\xlz\vendor\topthink\think-captcha\src\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2019-01-02T20:31:41+08:00 ] 127.0.0.1 127.0.0.1 GET /
+[ log ] www.xlz.com/ [运行时间：0.177105s][吞吐率：5.65req/s] [内存消耗：2,505.78kb] [文件加载：56]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->Index[ D:\phpStudy\WWW\xlz\application\home\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\xlz\public/../application/home\view\index\index.html [ array (
+  0 => 'showpage',
+  1 => 'list',
+  2 => 'tags',
+  3 => 'list2',
+  4 => 'se',
+  5 => 'greatpeople',
+  6 => 'a',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012372s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_past_act` [ RunTime:0.020476s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_past_act` WHERE  (  status=1 )  AND (  isdelete=0 ) LIMIT 1 [ RunTime:0.001132s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_past_act` WHERE  (  status=1 )  AND (  isdelete=0 ) ORDER BY pv desc LIMIT 0,8 [ RunTime:0.001495s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011912s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_past_act` WHERE  (  status=1 )  AND (  isdelete=0 ) LIMIT 1 [ RunTime:0.001435s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_past_act` WHERE  (  status=1 )  AND (  isdelete=0 ) ORDER BY id desc LIMIT 0,20 [ RunTime:0.001578s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012255s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_stu_act_info` [ RunTime:0.018900s ]
+[ sql ] [ SQL ] SELECT `s`.*,`sa`.`name`,`photo`,`ac`.`theme` FROM `lz_stu_act_info` `s` INNER JOIN `lz_activity` `ac` ON `s`.`aid`=`ac`.`id` INNER JOIN `lz_stu_apply` `sa` ON `sa`.`id`=`s`.`sid` GROUP BY s.sid HAVING count(s.grade)>=3 and grade="A+" [ RunTime:0.016457s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003713s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_stu_apply` [ RunTime:0.019070s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_stu_apply` WHERE  (  status=1 )  AND (  id=0 ) [ RunTime:0.000984s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:31:43+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/pub/login.html
+[ log ] www.xlz.com/admin/pub/login.html [运行时间：0.451919s][吞吐率：2.21req/s] [内存消耗：4,955.98kb] [文件加载：66]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'pub',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.201225s ]
+[ info ] [ RUN ] app\admin\controller\Pub->login[ D:\phpStudy\WWW\xlz\application\admin\controller\Pub.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\xlz\public/../application/admin\view\pub\login.html [ array (
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.106852s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013393s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_web_log_all` [ RunTime:0.022712s ]
+[ sql ] [ SQL ] INSERT INTO `lz_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (0 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(58.0.3029.110)' , 'http://www.xlz.com/admin/pub/login.html' , 'admin' , 'Pub' , 'login' , 'GET' , 'a:0:{}' , 1546432302) [ RunTime:0.048996s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:31:43+08:00 ] 127.0.0.1 127.0.0.1 GET /captcha.html
+[ log ] www.xlz.com/captcha.html [运行时间：0.086582s][吞吐率：11.55req/s] [内存消耗：1,223.85kb] [文件加载：39]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/pub/login.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '',
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ D:\phpStudy\WWW\xlz\vendor\topthink\think-captcha\src\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2019-01-02T20:31:45+08:00 ] 127.0.0.1 127.0.0.1 GET /captcha.html?t=1546432305458
+[ log ] www.xlz.com/captcha.html?t=1546432305458 [运行时间：0.068650s][吞吐率：14.57req/s] [内存消耗：1,223.98kb] [文件加载：39]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/pub/login.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+  't' => '1546432305458',
+  'id' => '',
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ D:\phpStudy\WWW\xlz\vendor\topthink\think-captcha\src\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2019-01-02T20:31:52+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/pub/checklogin.html
+[ log ] www.xlz.com/admin/pub/checklogin.html [运行时间：0.166519s][吞吐率：6.01req/s] [内存消耗：5,020.25kb] [文件加载：68]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'pub',
+    2 => 'checklogin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'content-length' => '43',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.xlz.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://www.xlz.com/admin/pub/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+  'account' => '010101',
+  'password' => '123456',
+  'captcha' => 'n4ve',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.008278s ]
+[ info ] [ RUN ] app\admin\controller\Pub->checkLogin[ D:\phpStudy\WWW\xlz\application\admin\controller\Pub.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.022474s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012667s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_admin_user` [ RunTime:0.023500s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_admin_user` WHERE  `account` = '010101'  AND `status` = 1 LIMIT 1 [ RunTime:0.001507s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_web_log_all` [ RunTime:0.019324s ]
+[ sql ] [ SQL ] INSERT INTO `lz_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (0 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(58.0.3029.110)' , 'http://www.xlz.com/admin/pub/checklogin.html' , 'admin' , 'Pub' , 'checklogin' , 'POST' , 'a:3:{s:7:\"account\";s:6:\"010101\";s:8:\"password\";s:6:\"123456\";s:7:\"captcha\";s:4:\"n4ve\";}' , 1546432312) [ RunTime:0.001234s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:32:52+08:00 ] 127.0.0.1 127.0.0.1 GET /captcha.html?t=1546432372355
+[ log ] www.xlz.com/captcha.html?t=1546432372355 [运行时间：0.067447s][吞吐率：14.83req/s] [内存消耗：1,223.97kb] [文件加载：39]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/pub/login.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+  't' => '1546432372355',
+  'id' => '',
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ D:\phpStudy\WWW\xlz\vendor\topthink\think-captcha\src\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2019-01-02T20:32:55+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/pub/checklogin.html
+[ log ] www.xlz.com/admin/pub/checklogin.html [运行时间：0.351572s][吞吐率：2.84req/s] [内存消耗：5,106.25kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'pub',
+    2 => 'checklogin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'content-length' => '41',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.xlz.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://www.xlz.com/admin/pub/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+  'account' => '8889',
+  'password' => '123456',
+  'captcha' => 'wjag',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.006735s ]
+[ info ] [ RUN ] app\admin\controller\Pub->checkLogin[ D:\phpStudy\WWW\xlz\application\admin\controller\Pub.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.025314s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.006288s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_admin_user` [ RunTime:0.020133s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_admin_user` WHERE  `account` = '8889'  AND `status` = 1 LIMIT 1 [ RunTime:0.044655s ]
+[ sql ] [ SQL ] UPDATE `lz_admin_user`  SET `last_login_time`=1546432375,`login_count`=login_count+1,`last_login_ip`='127.0.0.1'  WHERE  `id` = 20 [ RunTime:0.029362s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_login_log` [ RunTime:0.022006s ]
+[ sql ] [ SQL ] INSERT INTO `lz_login_log` (`uid` , `login_ip` , `login_location` , `login_browser` , `login_os`) VALUES (20 , '127.0.0.1' , '本机地址 本机地址  ' , 'Chrome(58.0.3029.110)' , 'Windows 10') [ RunTime:0.073327s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_web_log_all` [ RunTime:0.022384s ]
+[ sql ] [ SQL ] INSERT INTO `lz_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (0 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(58.0.3029.110)' , 'http://www.xlz.com/admin/pub/checklogin.html' , 'admin' , 'Pub' , 'checklogin' , 'POST' , 'a:3:{s:7:\"account\";s:4:\"8889\";s:8:\"password\";s:6:\"123456\";s:7:\"captcha\";s:4:\"wjag\";}' , 1546432375) [ RunTime:0.001336s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:32:56+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/index/index.html
+[ log ] www.xlz.com/admin/index/index.html [运行时间：0.277675s][吞吐率：3.60req/s] [内存消耗：5,067.21kb] [文件加载：69]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/pub/login.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.008823s ]
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\phpStudy\WWW\xlz\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\xlz\public/../application/admin\view\index\index.html [ array (
+  0 => 'groups',
+  1 => 'menu',
+) ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ D:\phpStudy\WWW\xlz\application\admin\widget\Index.php ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ D:\phpStudy\WWW\xlz\application\admin\widget\Index.php ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ D:\phpStudy\WWW\xlz\application\admin\widget\Index.php ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ D:\phpStudy\WWW\xlz\application\admin\widget\Index.php ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ D:\phpStudy\WWW\xlz\application\admin\widget\Index.php ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ D:\phpStudy\WWW\xlz\application\admin\widget\Index.php ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ D:\phpStudy\WWW\xlz\application\admin\widget\Index.php ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ D:\phpStudy\WWW\xlz\application\admin\widget\Index.php ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ D:\phpStudy\WWW\xlz\application\admin\widget\Index.php ]
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.024581s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003864s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT node.id,node.name,node.pid,node.group_id,node.title,node.type from lz_admin_role AS role,lz_admin_role_user AS user,lz_admin_access AS access ,lz_admin_node AS node WHERE user.user_id='20' AND user.role_id=role.id AND access.role_id=role.id AND role.status=1 AND access.node_id=node.id AND node.status=1 AND node.group_id > 0 ORDER BY node.sort ASC [ RunTime:0.042055s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_admin_group` [ RunTime:0.020171s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`icon` FROM `lz_admin_group` WHERE  `id` IN (1,4,3,6,7,8)  AND `status` = 1 ORDER BY sort asc,id asc [ RunTime:0.011814s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_web_log_all` [ RunTime:0.022366s ]
+[ sql ] [ SQL ] INSERT INTO `lz_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (20 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(58.0.3029.110)' , 'http://www.xlz.com/admin/index/index.html' , 'admin' , 'Index' , 'index' , 'GET' , 'a:0:{}' , 1546432375) [ RunTime:0.000938s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:32:56+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/index/welcome.html
+[ log ] www.xlz.com/admin/index/welcome.html [运行时间：0.243657s][吞吐率：4.10req/s] [内存消耗：5,256.18kb] [文件加载：70]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.010790s ]
+[ info ] [ RUN ] app\admin\controller\Index->welcome[ D:\phpStudy\WWW\xlz\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\xlz\public/../application/admin\view\index\welcome.html [ array (
+  0 => 'info',
+  1 => 'coll',
+  2 => 'm',
+  3 => 'c',
+  4 => 'nelist',
+  5 => 'newlist',
+  6 => 'bm',
+  7 => 'colist',
+) ]
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.022918s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003928s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_admin_user` [ RunTime:0.020496s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_admin_user` WHERE  `id` = 20 LIMIT 1 [ RunTime:0.001649s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004399s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_past_act` [ RunTime:0.021966s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_past_act` `p` WHERE  `p`.`isdelete` = 0 LIMIT 1 [ RunTime:0.001351s ]
+[ sql ] [ SQL ] SELECT `p`.`id`,`p`.`aid`,p.title tit,p.releasetime times FROM `lz_past_act` `p` WHERE  `p`.`isdelete` = 0 LIMIT 0,5 [ RunTime:0.001406s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004285s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_activity` [ RunTime:0.024928s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_activity` `p` WHERE  `p`.`isdelete` = 0  AND `p`.`status` = 2 LIMIT 1 [ RunTime:0.001308s ]
+[ sql ] [ SQL ] SELECT `p`.`id`,p.theme tit,p.issue_time times FROM `lz_activity` `p` WHERE  `p`.`isdelete` = 0  AND `p`.`status` = 2 LIMIT 0,5 [ RunTime:0.001144s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003628s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_stu_act_info` [ RunTime:0.021995s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_stu_act_info` `s` INNER JOIN `lz_teaching` `ac` ON `ac`.`id`=`s`.`secschool` INNER JOIN `lz_activity` `pa` ON `s`.`aid`=`pa`.`id` INNER JOIN `lz_stu_apply` `vo` ON `s`.`sid`=`vo`.`id` WHERE  `s`.`isdelete` = 0  AND `s`.`status` = 1  AND `s`.`sec_ass_status` = 1  AND `s`.`ass_status` = 0 LIMIT 1 [ RunTime:0.001431s ]
+[ sql ] [ SQL ] SELECT `s`.`id`,`s`.`aid`,`s`.`sid`,`s`.`content`,`pa`.`theme`,`vo`.`name`,`ac`.`catname` FROM `lz_stu_act_info` `s` INNER JOIN `lz_teaching` `ac` ON `ac`.`id`=`s`.`secschool` INNER JOIN `lz_activity` `pa` ON `s`.`aid`=`pa`.`id` INNER JOIN `lz_stu_apply` `vo` ON `s`.`sid`=`vo`.`id` WHERE  `s`.`isdelete` = 0  AND `s`.`status` = 1  AND `s`.`sec_ass_status` = 1  AND `s`.`ass_status` = 0 LIMIT 0,5 [ RunTime:0.001414s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_web_log_all` [ RunTime:0.021173s ]
+[ sql ] [ SQL ] INSERT INTO `lz_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (20 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(58.0.3029.110)' , 'http://www.xlz.com/admin/index/welcome.html' , 'admin' , 'Index' , 'welcome' , 'GET' , 'a:0:{}' , 1546432376) [ RunTime:0.000811s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:32:56+08:00 ] 127.0.0.1 127.0.0.1 GET /uploads/20181218154709.png
+[ log ] www.xlz.com/uploads/20181218154709.png [运行时间：0.042151s][吞吐率：23.72req/s] [内存消耗：1,196.98kb] [文件加载：40]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20181218154709.png',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/index/welcome.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2019-01-02T20:32:56+08:00 ] 127.0.0.1 127.0.0.1 GET /uploads/20181218154709.png
+[ log ] www.xlz.com/uploads/20181218154709.png [运行时间：0.035566s][吞吐率：28.12req/s] [内存消耗：1,196.95kb] [文件加载：40]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20181218154709.png',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/index/welcome.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2019-01-02T20:33:01+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/stu_approved/index.html
+[ log ] www.xlz.com/admin/stu_approved/index.html [运行时间：0.272183s][吞吐率：3.67req/s] [内存消耗：5,531.34kb] [文件加载：77]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'stu_approved',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.006454s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\StuApproved->index[ D:\phpStudy\WWW\xlz\application\admin\controller\StuApproved.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\xlz\public/../application/admin\view\stu_approved\index.html [ array (
+  0 => 'quanxian',
+  1 => 'page',
+  2 => 'list',
+  3 => 'count',
+) ]
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.021201s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013006s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT node.id,node.name,node.pid FROM lz_admin_role AS role,lz_admin_role_user AS user,lz_admin_access AS access ,lz_admin_node AS node WHERE user.user_id='20' AND user.role_id=role.id AND access.role_id=role.id AND role.status=1 AND access.node_id=node.id AND node.status=1 [ RunTime:0.003193s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004455s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_admin_role_user` [ RunTime:0.021788s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_admin_role_user` WHERE  (  user_id=20 ) LIMIT 1 [ RunTime:0.001679s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003806s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_stu_apply` [ RunTime:0.019885s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_stu_apply` `s` INNER JOIN `lz_teaching` `t` ON `t`.`id`=`s`.`college` INNER JOIN `lz_teaching` `ta` ON `ta`.`id`=`s`.`department` INNER JOIN `lz_teaching` `tas` ON `tas`.`id`=`s`.`class` WHERE  `s`.`isdelete` = 0  AND `s`.`status` = 1  AND (  1=1 ) LIMIT 1 [ RunTime:0.003802s ]
+[ sql ] [ SQL ] SELECT `s`.*,t.catname catname1,ta.catname catname2,tas.catname catname3 FROM `lz_stu_apply` `s` INNER JOIN `lz_teaching` `t` ON `t`.`id`=`s`.`college` INNER JOIN `lz_teaching` `ta` ON `ta`.`id`=`s`.`department` INNER JOIN `lz_teaching` `tas` ON `tas`.`id`=`s`.`class` WHERE  `s`.`isdelete` = 0  AND `s`.`status` = 1  AND (  1=1 ) ORDER BY s.id desc LIMIT 0,10 [ RunTime:0.001797s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_web_log_all` [ RunTime:0.017986s ]
+[ sql ] [ SQL ] INSERT INTO `lz_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (20 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(58.0.3029.110)' , 'http://www.xlz.com/admin/stu_approved/index.html' , 'admin' , 'StuApproved' , 'index' , 'GET' , 'a:0:{}' , 1546432380) [ RunTime:0.001458s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:33:02+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/pactivity/index.html
+[ log ] www.xlz.com/admin/pactivity/index.html [运行时间：0.222667s][吞吐率：4.49req/s] [内存消耗：5,356.62kb] [文件加载：74]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'pactivity',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.007517s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\admin\controller\Pactivity->index[ D:\phpStudy\WWW\xlz\application\admin\controller\Pactivity.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\xlz\public/../application/admin\view\pactivity\index.html [ array (
+  0 => 'quanxian',
+  1 => 'page',
+  2 => 'list',
+  3 => 'count',
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.031639s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012361s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_admin_role_user` [ RunTime:0.019820s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_admin_role_user` WHERE  (  user_id=20 ) LIMIT 1 [ RunTime:0.001097s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004101s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_activity` [ RunTime:0.018361s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_activity` WHERE  `status` IN (0,1,2)  AND (  1=1 ) LIMIT 1 [ RunTime:0.001201s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_activity` WHERE  `status` IN (0,1,2)  AND (  1=1 ) ORDER BY id desc LIMIT 0,7 [ RunTime:0.001838s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012215s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_web_log_all` [ RunTime:0.017426s ]
+[ sql ] [ SQL ] INSERT INTO `lz_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (20 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(58.0.3029.110)' , 'http://www.xlz.com/admin/pactivity/index.html' , 'admin' , 'Pactivity' , 'index' , 'GET' , 'a:0:{}' , 1546432382) [ RunTime:0.000705s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:33:03+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/activity/index.html
+[ log ] www.xlz.com/admin/activity/index.html [运行时间：0.264422s][吞吐率：3.78req/s] [内存消耗：5,602.45kb] [文件加载：76]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'activity',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.007403s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\admin\controller\Activity->index[ D:\phpStudy\WWW\xlz\application\admin\controller\Activity.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\xlz\public/../application/admin\view\activity\index.html [ array (
+  0 => 'list',
+  1 => 'count',
+  2 => 'page',
+  3 => 'numPerPage',
+  4 => 'quanxian',
+  5 => 'stu',
+) ]
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.020386s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012277s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_activity` [ RunTime:0.020431s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_activity` WHERE  `isdelete` = 0 LIMIT 1 [ RunTime:0.001469s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_activity` WHERE  `isdelete` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.001974s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011408s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_admin_role_user` [ RunTime:0.021548s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_admin_role_user` WHERE  (  user_id=20 ) LIMIT 1 [ RunTime:0.001327s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012786s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_activity` WHERE  `status` IN (3,4,5)  AND (  isdelete=0 )  AND (  1=1 ) LIMIT 1 [ RunTime:0.001434s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_activity` WHERE  `status` IN (3,4,5)  AND (  isdelete=0 )  AND (  1=1 ) ORDER BY id desc LIMIT 0,10 [ RunTime:0.002247s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_web_log_all` [ RunTime:0.018406s ]
+[ sql ] [ SQL ] INSERT INTO `lz_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (20 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(58.0.3029.110)' , 'http://www.xlz.com/admin/activity/index.html' , 'admin' , 'Activity' , 'index' , 'GET' , 'a:0:{}' , 1546432383) [ RunTime:0.001045s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:33:07+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/pactivity/index.html
+[ log ] www.xlz.com/admin/pactivity/index.html [运行时间：0.148866s][吞吐率：6.72req/s] [内存消耗：5,356.62kb] [文件加载：74]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'pactivity',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.007416s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\admin\controller\Pactivity->index[ D:\phpStudy\WWW\xlz\application\admin\controller\Pactivity.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\xlz\public/../application/admin\view\pactivity\index.html [ array (
+  0 => 'quanxian',
+  1 => 'page',
+  2 => 'list',
+  3 => 'count',
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.029811s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011531s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_admin_role_user` [ RunTime:0.017460s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_admin_role_user` WHERE  (  user_id=20 ) LIMIT 1 [ RunTime:0.000821s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002796s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_activity` [ RunTime:0.016582s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_activity` WHERE  `status` IN (0,1,2)  AND (  1=1 ) LIMIT 1 [ RunTime:0.000864s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_activity` WHERE  `status` IN (0,1,2)  AND (  1=1 ) ORDER BY id desc LIMIT 0,7 [ RunTime:0.001391s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011773s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_web_log_all` [ RunTime:0.015730s ]
+[ sql ] [ SQL ] INSERT INTO `lz_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (20 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(58.0.3029.110)' , 'http://www.xlz.com/admin/pactivity/index.html' , 'admin' , 'Pactivity' , 'index' , 'GET' , 'a:0:{}' , 1546432387) [ RunTime:0.001381s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:33:11+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/stu_approved/index.html
+[ log ] www.xlz.com/admin/stu_approved/index.html [运行时间：0.171619s][吞吐率：5.83req/s] [内存消耗：5,317.06kb] [文件加载：74]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'stu_approved',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.007501s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\admin\controller\StuApproved->index[ D:\phpStudy\WWW\xlz\application\admin\controller\StuApproved.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\xlz\public/../application/admin\view\stu_approved\index.html [ array (
+  0 => 'quanxian',
+  1 => 'page',
+  2 => 'list',
+  3 => 'count',
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.032945s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012636s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_admin_role_user` [ RunTime:0.018271s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_admin_role_user` WHERE  (  user_id=20 ) LIMIT 1 [ RunTime:0.001138s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011996s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_stu_apply` [ RunTime:0.016417s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_stu_apply` `s` INNER JOIN `lz_teaching` `t` ON `t`.`id`=`s`.`college` INNER JOIN `lz_teaching` `ta` ON `ta`.`id`=`s`.`department` INNER JOIN `lz_teaching` `tas` ON `tas`.`id`=`s`.`class` WHERE  `s`.`isdelete` = 0  AND `s`.`status` = 1  AND (  1=1 ) LIMIT 1 [ RunTime:0.000907s ]
+[ sql ] [ SQL ] SELECT `s`.*,t.catname catname1,ta.catname catname2,tas.catname catname3 FROM `lz_stu_apply` `s` INNER JOIN `lz_teaching` `t` ON `t`.`id`=`s`.`college` INNER JOIN `lz_teaching` `ta` ON `ta`.`id`=`s`.`department` INNER JOIN `lz_teaching` `tas` ON `tas`.`id`=`s`.`class` WHERE  `s`.`isdelete` = 0  AND `s`.`status` = 1  AND (  1=1 ) ORDER BY s.id desc LIMIT 0,10 [ RunTime:0.001216s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012645s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_web_log_all` [ RunTime:0.017715s ]
+[ sql ] [ SQL ] INSERT INTO `lz_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (20 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(58.0.3029.110)' , 'http://www.xlz.com/admin/stu_approved/index.html' , 'admin' , 'StuApproved' , 'index' , 'GET' , 'a:0:{}' , 1546432391) [ RunTime:0.001519s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:33:26+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/stu_approved/exchange/?id=301
+[ log ] www.xlz.com/admin/stu_approved/exchange/?id=301 [运行时间：0.091369s][吞吐率：10.94req/s] [内存消耗：4,432.63kb] [文件加载：67]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'stu_approved',
+    2 => 'exchange',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/stu_approved/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '301',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.010169s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2019-01-02T20:33:29+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/stu_approved/exchange/?id=301
+[ log ] www.xlz.com/admin/stu_approved/exchange/?id=301 [运行时间：0.059237s][吞吐率：16.88req/s] [内存消耗：4,432.63kb] [文件加载：67]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'stu_approved',
+    2 => 'exchange',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/stu_approved/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '301',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.008431s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2019-01-02T20:33:35+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/stu_approved/exchange/?id=300
+[ log ] www.xlz.com/admin/stu_approved/exchange/?id=300 [运行时间：0.104906s][吞吐率：9.53req/s] [内存消耗：4,432.63kb] [文件加载：67]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'stu_approved',
+    2 => 'exchange',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/stu_approved/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '300',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.032883s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2019-01-02T20:33:38+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/stu_approved/exchange/?id=301
+[ log ] www.xlz.com/admin/stu_approved/exchange/?id=301 [运行时间：0.063472s][吞吐率：15.75req/s] [内存消耗：4,432.63kb] [文件加载：67]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'stu_approved',
+    2 => 'exchange',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/stu_approved/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '301',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.007738s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2019-01-02T20:36:19+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/pub/logout.html
+[ log ] www.xlz.com/admin/pub/logout.html [运行时间：0.165478s][吞吐率：6.04req/s] [内存消耗：4,973.27kb] [文件加载：67]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'pub',
+    2 => 'logout',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.011862s ]
+[ info ] [ RUN ] app\admin\controller\Pub->logout[ D:\phpStudy\WWW\xlz\application\admin\controller\Pub.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.054681s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012628s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_web_log_all` [ RunTime:0.024525s ]
+[ sql ] [ SQL ] INSERT INTO `lz_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (20 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(58.0.3029.110)' , 'http://www.xlz.com/admin/pub/logout.html' , 'admin' , 'Pub' , 'logout' , 'GET' , 'a:0:{}' , 1546432578) [ RunTime:0.002085s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:36:19+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/pub/login.html
+[ log ] www.xlz.com/admin/pub/login.html [运行时间：0.097203s][吞吐率：10.29req/s] [内存消耗：4,955.18kb] [文件加载：66]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'pub',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.009249s ]
+[ info ] [ RUN ] app\admin\controller\Pub->login[ D:\phpStudy\WWW\xlz\application\admin\controller\Pub.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\xlz\public/../application/admin\view\pub\login.html [ array (
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.049014s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004984s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_web_log_all` [ RunTime:0.025382s ]
+[ sql ] [ SQL ] INSERT INTO `lz_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (0 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(58.0.3029.110)' , 'http://www.xlz.com/admin/pub/login.html' , 'admin' , 'Pub' , 'login' , 'GET' , 'a:0:{}' , 1546432579) [ RunTime:0.001105s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:36:19+08:00 ] 127.0.0.1 127.0.0.1 GET /captcha.html
+[ log ] www.xlz.com/captcha.html [运行时间：0.032617s][吞吐率：30.66req/s] [内存消耗：1,223.50kb] [文件加载：39]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/pub/login.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '',
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ D:\phpStudy\WWW\xlz\vendor\topthink\think-captcha\src\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2019-01-02T20:36:55+08:00 ] 127.0.0.1 127.0.0.1 GET /captcha.html?t=1546432615506
+[ log ] www.xlz.com/captcha.html?t=1546432615506 [运行时间：0.033967s][吞吐率：29.44req/s] [内存消耗：1,223.65kb] [文件加载：39]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/pub/login.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+  't' => '1546432615506',
+  'id' => '',
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ D:\phpStudy\WWW\xlz\vendor\topthink\think-captcha\src\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2019-01-02T20:36:59+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/pub/checklogin.html
+[ log ] www.xlz.com/admin/pub/checklogin.html [运行时间：0.234490s][吞吐率：4.26req/s] [内存消耗：5,106.36kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'pub',
+    2 => 'checklogin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'content-length' => '42',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.xlz.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://www.xlz.com/admin/pub/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+  'account' => 'admin',
+  'password' => '123456',
+  'captcha' => '2dcz',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.009281s ]
+[ info ] [ RUN ] app\admin\controller\Pub->checkLogin[ D:\phpStudy\WWW\xlz\application\admin\controller\Pub.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.036035s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013563s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_admin_user` [ RunTime:0.022783s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_admin_user` WHERE  `account` = 'admin'  AND `status` = 1 LIMIT 1 [ RunTime:0.001547s ]
+[ sql ] [ SQL ] UPDATE `lz_admin_user`  SET `last_login_time`=1546432618,`login_count`=login_count+1,`last_login_ip`='127.0.0.1'  WHERE  `id` = 1 [ RunTime:0.001435s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_login_log` [ RunTime:0.021393s ]
+[ sql ] [ SQL ] INSERT INTO `lz_login_log` (`uid` , `login_ip` , `login_location` , `login_browser` , `login_os`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Chrome(58.0.3029.110)' , 'Windows 10') [ RunTime:0.064131s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_web_log_all` [ RunTime:0.021893s ]
+[ sql ] [ SQL ] INSERT INTO `lz_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (0 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(58.0.3029.110)' , 'http://www.xlz.com/admin/pub/checklogin.html' , 'admin' , 'Pub' , 'checklogin' , 'POST' , 'a:3:{s:7:\"account\";s:5:\"admin\";s:8:\"password\";s:6:\"123456\";s:7:\"captcha\";s:4:\"2dcz\";}' , 1546432618) [ RunTime:0.001366s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:36:59+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/index/index.html
+[ log ] www.xlz.com/admin/index/index.html [运行时间：0.145338s][吞吐率：6.88req/s] [内存消耗：5,100.21kb] [文件加载：69]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/pub/login.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.006727s ]
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\phpStudy\WWW\xlz\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\xlz\public/../application/admin\view\index\index.html [ array (
+  0 => 'groups',
+  1 => 'menu',
+) ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ D:\phpStudy\WWW\xlz\application\admin\widget\Index.php ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ D:\phpStudy\WWW\xlz\application\admin\widget\Index.php ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ D:\phpStudy\WWW\xlz\application\admin\widget\Index.php ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ D:\phpStudy\WWW\xlz\application\admin\widget\Index.php ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ D:\phpStudy\WWW\xlz\application\admin\widget\Index.php ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ D:\phpStudy\WWW\xlz\application\admin\widget\Index.php ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ D:\phpStudy\WWW\xlz\application\admin\widget\Index.php ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ D:\phpStudy\WWW\xlz\application\admin\widget\Index.php ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ D:\phpStudy\WWW\xlz\application\admin\widget\Index.php ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ D:\phpStudy\WWW\xlz\application\admin\widget\Index.php ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ D:\phpStudy\WWW\xlz\application\admin\widget\Index.php ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ D:\phpStudy\WWW\xlz\application\admin\widget\Index.php ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ D:\phpStudy\WWW\xlz\application\admin\widget\Index.php ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ D:\phpStudy\WWW\xlz\application\admin\widget\Index.php ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ D:\phpStudy\WWW\xlz\application\admin\widget\Index.php ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ D:\phpStudy\WWW\xlz\application\admin\widget\Index.php ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ D:\phpStudy\WWW\xlz\application\admin\widget\Index.php ]
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.021315s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012251s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_admin_node` [ RunTime:0.019385s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`name`,`group_id`,`title`,`type` FROM `lz_admin_node` WHERE  (  status=1 AND group_id > 0 ) [ RunTime:0.001078s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_admin_group` [ RunTime:0.017589s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`icon` FROM `lz_admin_group` WHERE  `id` IN (1,2,5,4,6,3,7,9,8)  AND `status` = 1 ORDER BY sort asc,id asc [ RunTime:0.000997s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_web_log_all` [ RunTime:0.019552s ]
+[ sql ] [ SQL ] INSERT INTO `lz_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(58.0.3029.110)' , 'http://www.xlz.com/admin/index/index.html' , 'admin' , 'Index' , 'index' , 'GET' , 'a:0:{}' , 1546432619) [ RunTime:0.000877s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:36:59+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/index/welcome.html
+[ log ] www.xlz.com/admin/index/welcome.html [运行时间：0.199375s][吞吐率：5.02req/s] [内存消耗：5,260.78kb] [文件加载：70]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.007604s ]
+[ info ] [ RUN ] app\admin\controller\Index->welcome[ D:\phpStudy\WWW\xlz\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\xlz\public/../application/admin\view\index\welcome.html [ array (
+  0 => 'info',
+  1 => 'coll',
+  2 => 'm',
+  3 => 'c',
+  4 => 'nelist',
+  5 => 'newlist',
+  6 => 'bm',
+  7 => 'colist',
+) ]
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.020690s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003709s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_admin_user` [ RunTime:0.020415s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.002722s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002618s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_past_act` [ RunTime:0.018645s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_past_act` `p` WHERE  `p`.`isdelete` = 0 LIMIT 1 [ RunTime:0.000550s ]
+[ sql ] [ SQL ] SELECT `p`.`id`,`p`.`aid`,p.title tit,p.releasetime times FROM `lz_past_act` `p` WHERE  `p`.`isdelete` = 0 LIMIT 0,5 [ RunTime:0.000492s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004163s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_activity` [ RunTime:0.019588s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_activity` `p` WHERE  `p`.`isdelete` = 0  AND `p`.`status` = 2 LIMIT 1 [ RunTime:0.000772s ]
+[ sql ] [ SQL ] SELECT `p`.`id`,p.theme tit,p.issue_time times FROM `lz_activity` `p` WHERE  `p`.`isdelete` = 0  AND `p`.`status` = 2 LIMIT 0,5 [ RunTime:0.000681s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002804s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_stu_apply` [ RunTime:0.018343s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_stu_apply` `s` INNER JOIN `lz_teaching` `t` ON `t`.`id`=`s`.`college` INNER JOIN `lz_teaching` `ta` ON `ta`.`id`=`s`.`department` INNER JOIN `lz_teaching` `tas` ON `tas`.`id`=`s`.`class` WHERE  `s`.`isdelete` = 0  AND `s`.`status` = 0 LIMIT 1 [ RunTime:0.001215s ]
+[ sql ] [ SQL ] SELECT `s`.`id`,`s`.`name`,`s`.`sex`,`s`.`phone`,t.catname catname1,ta.catname catname2,tas.catname catname3 FROM `lz_stu_apply` `s` INNER JOIN `lz_teaching` `t` ON `t`.`id`=`s`.`college` INNER JOIN `lz_teaching` `ta` ON `ta`.`id`=`s`.`department` INNER JOIN `lz_teaching` `tas` ON `tas`.`id`=`s`.`class` WHERE  `s`.`isdelete` = 0  AND `s`.`status` = 0 LIMIT 0,10 [ RunTime:0.001374s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_web_log_all` [ RunTime:0.018494s ]
+[ sql ] [ SQL ] INSERT INTO `lz_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(58.0.3029.110)' , 'http://www.xlz.com/admin/index/welcome.html' , 'admin' , 'Index' , 'welcome' , 'GET' , 'a:0:{}' , 1546432619) [ RunTime:0.001042s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:36:59+08:00 ] 127.0.0.1 127.0.0.1 GET /uploads/20181217120653.png
+[ log ] www.xlz.com/uploads/20181217120653.png [运行时间：0.032476s][吞吐率：30.79req/s] [内存消耗：1,196.95kb] [文件加载：40]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20181217120653.png',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/index/welcome.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2019-01-02T20:36:59+08:00 ] 127.0.0.1 127.0.0.1 GET /uploads/20181217120653.png
+[ log ] www.xlz.com/uploads/20181217120653.png [运行时间：0.030749s][吞吐率：32.52req/s] [内存消耗：1,196.95kb] [文件加载：40]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20181217120653.png',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/index/welcome.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2019-01-02T20:37:04+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/activity/index.html
+[ log ] www.xlz.com/admin/activity/index.html [运行时间：0.191969s][吞吐率：5.21req/s] [内存消耗：5,521.30kb] [文件加载：73]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'activity',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.007535s ]
+[ info ] [ RUN ] app\admin\controller\Activity->index[ D:\phpStudy\WWW\xlz\application\admin\controller\Activity.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\xlz\public/../application/admin\view\activity\index.html [ array (
+  0 => 'list',
+  1 => 'count',
+  2 => 'page',
+  3 => 'numPerPage',
+  4 => 'quanxian',
+  5 => 'stu',
+) ]
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.020613s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012303s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_activity` [ RunTime:0.020972s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_activity` WHERE  `isdelete` = 0 LIMIT 1 [ RunTime:0.001604s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_activity` WHERE  `isdelete` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.001319s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012697s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_admin_role_user` [ RunTime:0.018297s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_admin_role_user` WHERE  (  user_id=1 ) LIMIT 1 [ RunTime:0.000923s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012205s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_activity` WHERE  `status` IN (3,4,5)  AND (  isdelete=0 )  AND (  1=1 ) LIMIT 1 [ RunTime:0.002626s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_activity` WHERE  `status` IN (3,4,5)  AND (  isdelete=0 )  AND (  1=1 ) ORDER BY id desc LIMIT 0,10 [ RunTime:0.001775s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_web_log_all` [ RunTime:0.018332s ]
+[ sql ] [ SQL ] INSERT INTO `lz_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(58.0.3029.110)' , 'http://www.xlz.com/admin/activity/index.html' , 'admin' , 'Activity' , 'index' , 'GET' , 'a:0:{}' , 1546432624) [ RunTime:0.000827s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:37:05+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/activity/index.html
+[ log ] www.xlz.com/admin/activity/index.html [运行时间：0.170656s][吞吐率：5.86req/s] [内存消耗：5,521.30kb] [文件加载：73]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'activity',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.006569s ]
+[ info ] [ RUN ] app\admin\controller\Activity->index[ D:\phpStudy\WWW\xlz\application\admin\controller\Activity.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\xlz\public/../application/admin\view\activity\index.html [ array (
+  0 => 'list',
+  1 => 'count',
+  2 => 'page',
+  3 => 'numPerPage',
+  4 => 'quanxian',
+  5 => 'stu',
+) ]
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.018900s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012497s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_activity` [ RunTime:0.021857s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_activity` WHERE  `isdelete` = 0 LIMIT 1 [ RunTime:0.001041s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_activity` WHERE  `isdelete` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.001907s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012946s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_admin_role_user` [ RunTime:0.017558s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_admin_role_user` WHERE  (  user_id=1 ) LIMIT 1 [ RunTime:0.000944s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011073s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_activity` WHERE  `status` IN (3,4,5)  AND (  isdelete=0 )  AND (  1=1 ) LIMIT 1 [ RunTime:0.000979s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_activity` WHERE  `status` IN (3,4,5)  AND (  isdelete=0 )  AND (  1=1 ) ORDER BY id desc LIMIT 0,10 [ RunTime:0.001380s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_web_log_all` [ RunTime:0.016551s ]
+[ sql ] [ SQL ] INSERT INTO `lz_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(58.0.3029.110)' , 'http://www.xlz.com/admin/activity/index.html' , 'admin' , 'Activity' , 'index' , 'GET' , 'a:0:{}' , 1546432625) [ RunTime:0.001054s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:37:06+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/activity/index.html
+[ log ] www.xlz.com/admin/activity/index.html [运行时间：0.168423s][吞吐率：5.94req/s] [内存消耗：5,521.30kb] [文件加载：73]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'activity',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.006844s ]
+[ info ] [ RUN ] app\admin\controller\Activity->index[ D:\phpStudy\WWW\xlz\application\admin\controller\Activity.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\xlz\public/../application/admin\view\activity\index.html [ array (
+  0 => 'list',
+  1 => 'count',
+  2 => 'page',
+  3 => 'numPerPage',
+  4 => 'quanxian',
+  5 => 'stu',
+) ]
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.020350s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013133s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_activity` [ RunTime:0.021789s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_activity` WHERE  `isdelete` = 0 LIMIT 1 [ RunTime:0.001109s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_activity` WHERE  `isdelete` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.001887s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012285s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_admin_role_user` [ RunTime:0.016345s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_admin_role_user` WHERE  (  user_id=1 ) LIMIT 1 [ RunTime:0.000830s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012927s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_activity` WHERE  `status` IN (3,4,5)  AND (  isdelete=0 )  AND (  1=1 ) LIMIT 1 [ RunTime:0.001009s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_activity` WHERE  `status` IN (3,4,5)  AND (  isdelete=0 )  AND (  1=1 ) ORDER BY id desc LIMIT 0,10 [ RunTime:0.001115s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_web_log_all` [ RunTime:0.018241s ]
+[ sql ] [ SQL ] INSERT INTO `lz_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(58.0.3029.110)' , 'http://www.xlz.com/admin/activity/index.html' , 'admin' , 'Activity' , 'index' , 'GET' , 'a:0:{}' , 1546432626) [ RunTime:0.001089s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:37:07+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/pactivity/index.html
+[ log ] www.xlz.com/admin/pactivity/index.html [运行时间：0.169436s][吞吐率：5.90req/s] [内存消耗：5,275.33kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'pactivity',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.008142s ]
+[ info ] [ RUN ] app\admin\controller\Pactivity->index[ D:\phpStudy\WWW\xlz\application\admin\controller\Pactivity.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\xlz\public/../application/admin\view\pactivity\index.html [ array (
+  0 => 'quanxian',
+  1 => 'page',
+  2 => 'list',
+  3 => 'count',
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.033044s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012238s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_admin_role_user` [ RunTime:0.019691s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_admin_role_user` WHERE  (  user_id=1 ) LIMIT 1 [ RunTime:0.000954s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012767s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_activity` [ RunTime:0.018244s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_activity` WHERE  `status` IN (0,1,2)  AND (  1=1 ) LIMIT 1 [ RunTime:0.001357s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_activity` WHERE  `status` IN (0,1,2)  AND (  1=1 ) ORDER BY id desc LIMIT 0,7 [ RunTime:0.001872s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012480s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_web_log_all` [ RunTime:0.017000s ]
+[ sql ] [ SQL ] INSERT INTO `lz_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(58.0.3029.110)' , 'http://www.xlz.com/admin/pactivity/index.html' , 'admin' , 'Pactivity' , 'index' , 'GET' , 'a:0:{}' , 1546432627) [ RunTime:0.001510s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:37:16+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/stu_apply/index.html
+[ log ] www.xlz.com/admin/stu_apply/index.html [运行时间：0.225063s][吞吐率：4.44req/s] [内存消耗：5,519.31kb] [文件加载：74]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'stu_apply',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.007594s ]
+[ info ] [ RUN ] app\admin\controller\StuApply->index[ D:\phpStudy\WWW\xlz\application\admin\controller\StuApply.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\xlz\public/../application/admin\view\stu_apply\index.html [ array (
+  0 => 'list',
+  1 => 'count',
+  2 => 'page',
+  3 => 'numPerPage',
+  4 => 'quanxian',
+) ]
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.023139s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011492s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_stu_apply` [ RunTime:0.020868s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_stu_apply` WHERE  `isdelete` = 0 LIMIT 1 [ RunTime:0.001005s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_stu_apply` WHERE  `isdelete` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.001929s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003896s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_admin_role_user` [ RunTime:0.018096s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_admin_role_user` WHERE  (  user_id=1 ) LIMIT 1 [ RunTime:0.000974s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003858s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_stu_apply` `s` INNER JOIN `lz_teaching` `t` ON `t`.`id`=`s`.`college` INNER JOIN `lz_teaching` `ta` ON `ta`.`id`=`s`.`department` INNER JOIN `lz_teaching` `tas` ON `tas`.`id`=`s`.`class` WHERE  `s`.`isdelete` = 0  AND `s`.`status` = 0  AND (  1=1 ) LIMIT 1 [ RunTime:0.001998s ]
+[ sql ] [ SQL ] SELECT `s`.*,t.catname catname1,ta.catname catname2,tas.catname catname3 FROM `lz_stu_apply` `s` INNER JOIN `lz_teaching` `t` ON `t`.`id`=`s`.`college` INNER JOIN `lz_teaching` `ta` ON `ta`.`id`=`s`.`department` INNER JOIN `lz_teaching` `tas` ON `tas`.`id`=`s`.`class` WHERE  `s`.`isdelete` = 0  AND `s`.`status` = 0  AND (  1=1 ) ORDER BY s.id desc LIMIT 0,10 [ RunTime:0.002336s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_web_log_all` [ RunTime:0.021072s ]
+[ sql ] [ SQL ] INSERT INTO `lz_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(58.0.3029.110)' , 'http://www.xlz.com/admin/stu_apply/index.html' , 'admin' , 'StuApply' , 'index' , 'GET' , 'a:0:{}' , 1546432636) [ RunTime:0.000955s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:37:19+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/stu_approved/index.html
+[ log ] www.xlz.com/admin/stu_approved/index.html [运行时间：0.162344s][吞吐率：6.16req/s] [内存消耗：5,235.78kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'stu_approved',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.008282s ]
+[ info ] [ RUN ] app\admin\controller\StuApproved->index[ D:\phpStudy\WWW\xlz\application\admin\controller\StuApproved.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\xlz\public/../application/admin\view\stu_approved\index.html [ array (
+  0 => 'quanxian',
+  1 => 'page',
+  2 => 'list',
+  3 => 'count',
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.030445s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004789s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_admin_role_user` [ RunTime:0.021236s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_admin_role_user` WHERE  (  user_id=1 ) LIMIT 1 [ RunTime:0.001612s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011617s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_stu_apply` [ RunTime:0.019105s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_stu_apply` `s` INNER JOIN `lz_teaching` `t` ON `t`.`id`=`s`.`college` INNER JOIN `lz_teaching` `ta` ON `ta`.`id`=`s`.`department` INNER JOIN `lz_teaching` `tas` ON `tas`.`id`=`s`.`class` WHERE  `s`.`isdelete` = 0  AND `s`.`status` = 1  AND (  1=1 ) LIMIT 1 [ RunTime:0.000905s ]
+[ sql ] [ SQL ] SELECT `s`.*,t.catname catname1,ta.catname catname2,tas.catname catname3 FROM `lz_stu_apply` `s` INNER JOIN `lz_teaching` `t` ON `t`.`id`=`s`.`college` INNER JOIN `lz_teaching` `ta` ON `ta`.`id`=`s`.`department` INNER JOIN `lz_teaching` `tas` ON `tas`.`id`=`s`.`class` WHERE  `s`.`isdelete` = 0  AND `s`.`status` = 1  AND (  1=1 ) ORDER BY s.id desc LIMIT 0,10 [ RunTime:0.001247s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011806s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_web_log_all` [ RunTime:0.016941s ]
+[ sql ] [ SQL ] INSERT INTO `lz_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(58.0.3029.110)' , 'http://www.xlz.com/admin/stu_approved/index.html' , 'admin' , 'StuApproved' , 'index' , 'GET' , 'a:0:{}' , 1546432639) [ RunTime:0.000825s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:37:24+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/stu_apply/index.html
+[ log ] www.xlz.com/admin/stu_apply/index.html [运行时间：0.171223s][吞吐率：5.84req/s] [内存消耗：5,292.16kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'stu_apply',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.007503s ]
+[ info ] [ RUN ] app\admin\controller\StuApply->index[ D:\phpStudy\WWW\xlz\application\admin\controller\StuApply.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\xlz\public/../application/admin\view\stu_apply\index.html [ array (
+  0 => 'list',
+  1 => 'count',
+  2 => 'page',
+  3 => 'numPerPage',
+  4 => 'quanxian',
+) ]
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.022896s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012470s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_stu_apply` [ RunTime:0.020705s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_stu_apply` WHERE  `isdelete` = 0 LIMIT 1 [ RunTime:0.001560s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_stu_apply` WHERE  `isdelete` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.003079s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011475s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_admin_role_user` [ RunTime:0.021827s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_admin_role_user` WHERE  (  user_id=1 ) LIMIT 1 [ RunTime:0.000881s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003285s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_stu_apply` `s` INNER JOIN `lz_teaching` `t` ON `t`.`id`=`s`.`college` INNER JOIN `lz_teaching` `ta` ON `ta`.`id`=`s`.`department` INNER JOIN `lz_teaching` `tas` ON `tas`.`id`=`s`.`class` WHERE  `s`.`isdelete` = 0  AND `s`.`status` = 0  AND (  1=1 ) LIMIT 1 [ RunTime:0.000881s ]
+[ sql ] [ SQL ] SELECT `s`.*,t.catname catname1,ta.catname catname2,tas.catname catname3 FROM `lz_stu_apply` `s` INNER JOIN `lz_teaching` `t` ON `t`.`id`=`s`.`college` INNER JOIN `lz_teaching` `ta` ON `ta`.`id`=`s`.`department` INNER JOIN `lz_teaching` `tas` ON `tas`.`id`=`s`.`class` WHERE  `s`.`isdelete` = 0  AND `s`.`status` = 0  AND (  1=1 ) ORDER BY s.id desc LIMIT 0,10 [ RunTime:0.001417s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_web_log_all` [ RunTime:0.019705s ]
+[ sql ] [ SQL ] INSERT INTO `lz_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(58.0.3029.110)' , 'http://www.xlz.com/admin/stu_apply/index.html' , 'admin' , 'StuApply' , 'index' , 'GET' , 'a:0:{}' , 1546432644) [ RunTime:0.001365s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:37:25+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/stu_approved/index.html
+[ log ] www.xlz.com/admin/stu_approved/index.html [运行时间：0.159107s][吞吐率：6.29req/s] [内存消耗：5,235.78kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'stu_approved',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.008432s ]
+[ info ] [ RUN ] app\admin\controller\StuApproved->index[ D:\phpStudy\WWW\xlz\application\admin\controller\StuApproved.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\xlz\public/../application/admin\view\stu_approved\index.html [ array (
+  0 => 'quanxian',
+  1 => 'page',
+  2 => 'list',
+  3 => 'count',
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.032313s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012585s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_admin_role_user` [ RunTime:0.019892s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_admin_role_user` WHERE  (  user_id=1 ) LIMIT 1 [ RunTime:0.001058s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012259s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_stu_apply` [ RunTime:0.016393s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_stu_apply` `s` INNER JOIN `lz_teaching` `t` ON `t`.`id`=`s`.`college` INNER JOIN `lz_teaching` `ta` ON `ta`.`id`=`s`.`department` INNER JOIN `lz_teaching` `tas` ON `tas`.`id`=`s`.`class` WHERE  `s`.`isdelete` = 0  AND `s`.`status` = 1  AND (  1=1 ) LIMIT 1 [ RunTime:0.001036s ]
+[ sql ] [ SQL ] SELECT `s`.*,t.catname catname1,ta.catname catname2,tas.catname catname3 FROM `lz_stu_apply` `s` INNER JOIN `lz_teaching` `t` ON `t`.`id`=`s`.`college` INNER JOIN `lz_teaching` `ta` ON `ta`.`id`=`s`.`department` INNER JOIN `lz_teaching` `tas` ON `tas`.`id`=`s`.`class` WHERE  `s`.`isdelete` = 0  AND `s`.`status` = 1  AND (  1=1 ) ORDER BY s.id desc LIMIT 0,10 [ RunTime:0.001240s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011965s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_web_log_all` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] INSERT INTO `lz_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(58.0.3029.110)' , 'http://www.xlz.com/admin/stu_approved/index.html' , 'admin' , 'StuApproved' , 'index' , 'GET' , 'a:0:{}' , 1546432645) [ RunTime:0.001302s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:37:25+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/stu_apply/index.html
+[ log ] www.xlz.com/admin/stu_apply/index.html [运行时间：0.172784s][吞吐率：5.79req/s] [内存消耗：5,292.16kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'stu_apply',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.007401s ]
+[ info ] [ RUN ] app\admin\controller\StuApply->index[ D:\phpStudy\WWW\xlz\application\admin\controller\StuApply.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\xlz\public/../application/admin\view\stu_apply\index.html [ array (
+  0 => 'list',
+  1 => 'count',
+  2 => 'page',
+  3 => 'numPerPage',
+  4 => 'quanxian',
+) ]
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.020460s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011980s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_stu_apply` [ RunTime:0.020472s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_stu_apply` WHERE  `isdelete` = 0 LIMIT 1 [ RunTime:0.001217s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_stu_apply` WHERE  `isdelete` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.001700s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012094s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_admin_role_user` [ RunTime:0.016159s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_admin_role_user` WHERE  (  user_id=1 ) LIMIT 1 [ RunTime:0.000758s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012571s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_stu_apply` `s` INNER JOIN `lz_teaching` `t` ON `t`.`id`=`s`.`college` INNER JOIN `lz_teaching` `ta` ON `ta`.`id`=`s`.`department` INNER JOIN `lz_teaching` `tas` ON `tas`.`id`=`s`.`class` WHERE  `s`.`isdelete` = 0  AND `s`.`status` = 0  AND (  1=1 ) LIMIT 1 [ RunTime:0.001070s ]
+[ sql ] [ SQL ] SELECT `s`.*,t.catname catname1,ta.catname catname2,tas.catname catname3 FROM `lz_stu_apply` `s` INNER JOIN `lz_teaching` `t` ON `t`.`id`=`s`.`college` INNER JOIN `lz_teaching` `ta` ON `ta`.`id`=`s`.`department` INNER JOIN `lz_teaching` `tas` ON `tas`.`id`=`s`.`class` WHERE  `s`.`isdelete` = 0  AND `s`.`status` = 0  AND (  1=1 ) ORDER BY s.id desc LIMIT 0,10 [ RunTime:0.001451s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_web_log_all` [ RunTime:0.018260s ]
+[ sql ] [ SQL ] INSERT INTO `lz_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(58.0.3029.110)' , 'http://www.xlz.com/admin/stu_apply/index.html' , 'admin' , 'StuApply' , 'index' , 'GET' , 'a:0:{}' , 1546432645) [ RunTime:0.001286s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:37:26+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/stu_approved/index.html
+[ log ] www.xlz.com/admin/stu_approved/index.html [运行时间：0.160345s][吞吐率：6.24req/s] [内存消耗：5,235.78kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'stu_approved',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.006924s ]
+[ info ] [ RUN ] app\admin\controller\StuApproved->index[ D:\phpStudy\WWW\xlz\application\admin\controller\StuApproved.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\xlz\public/../application/admin\view\stu_approved\index.html [ array (
+  0 => 'quanxian',
+  1 => 'page',
+  2 => 'list',
+  3 => 'count',
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.031748s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012188s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_admin_role_user` [ RunTime:0.018623s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_admin_role_user` WHERE  (  user_id=1 ) LIMIT 1 [ RunTime:0.000606s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012392s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_stu_apply` [ RunTime:0.018941s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_stu_apply` `s` INNER JOIN `lz_teaching` `t` ON `t`.`id`=`s`.`college` INNER JOIN `lz_teaching` `ta` ON `ta`.`id`=`s`.`department` INNER JOIN `lz_teaching` `tas` ON `tas`.`id`=`s`.`class` WHERE  `s`.`isdelete` = 0  AND `s`.`status` = 1  AND (  1=1 ) LIMIT 1 [ RunTime:0.001278s ]
+[ sql ] [ SQL ] SELECT `s`.*,t.catname catname1,ta.catname catname2,tas.catname catname3 FROM `lz_stu_apply` `s` INNER JOIN `lz_teaching` `t` ON `t`.`id`=`s`.`college` INNER JOIN `lz_teaching` `ta` ON `ta`.`id`=`s`.`department` INNER JOIN `lz_teaching` `tas` ON `tas`.`id`=`s`.`class` WHERE  `s`.`isdelete` = 0  AND `s`.`status` = 1  AND (  1=1 ) ORDER BY s.id desc LIMIT 0,10 [ RunTime:0.001576s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012631s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_web_log_all` [ RunTime:0.016779s ]
+[ sql ] [ SQL ] INSERT INTO `lz_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(58.0.3029.110)' , 'http://www.xlz.com/admin/stu_approved/index.html' , 'admin' , 'StuApproved' , 'index' , 'GET' , 'a:0:{}' , 1546432646) [ RunTime:0.001277s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:37:27+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/stu_apply/index.html
+[ log ] www.xlz.com/admin/stu_apply/index.html [运行时间：0.157265s][吞吐率：6.36req/s] [内存消耗：5,292.16kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'stu_apply',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.007668s ]
+[ info ] [ RUN ] app\admin\controller\StuApply->index[ D:\phpStudy\WWW\xlz\application\admin\controller\StuApply.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\xlz\public/../application/admin\view\stu_apply\index.html [ array (
+  0 => 'list',
+  1 => 'count',
+  2 => 'page',
+  3 => 'numPerPage',
+  4 => 'quanxian',
+) ]
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.022293s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003265s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_stu_apply` [ RunTime:0.019720s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_stu_apply` WHERE  `isdelete` = 0 LIMIT 1 [ RunTime:0.001339s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_stu_apply` WHERE  `isdelete` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.001830s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003448s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_admin_role_user` [ RunTime:0.020200s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_admin_role_user` WHERE  (  user_id=1 ) LIMIT 1 [ RunTime:0.002840s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003262s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_stu_apply` `s` INNER JOIN `lz_teaching` `t` ON `t`.`id`=`s`.`college` INNER JOIN `lz_teaching` `ta` ON `ta`.`id`=`s`.`department` INNER JOIN `lz_teaching` `tas` ON `tas`.`id`=`s`.`class` WHERE  `s`.`isdelete` = 0  AND `s`.`status` = 0  AND (  1=1 ) LIMIT 1 [ RunTime:0.001863s ]
+[ sql ] [ SQL ] SELECT `s`.*,t.catname catname1,ta.catname catname2,tas.catname catname3 FROM `lz_stu_apply` `s` INNER JOIN `lz_teaching` `t` ON `t`.`id`=`s`.`college` INNER JOIN `lz_teaching` `ta` ON `ta`.`id`=`s`.`department` INNER JOIN `lz_teaching` `tas` ON `tas`.`id`=`s`.`class` WHERE  `s`.`isdelete` = 0  AND `s`.`status` = 0  AND (  1=1 ) ORDER BY s.id desc LIMIT 0,10 [ RunTime:0.002340s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_web_log_all` [ RunTime:0.019186s ]
+[ sql ] [ SQL ] INSERT INTO `lz_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(58.0.3029.110)' , 'http://www.xlz.com/admin/stu_apply/index.html' , 'admin' , 'StuApply' , 'index' , 'GET' , 'a:0:{}' , 1546432647) [ RunTime:0.001357s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:37:44+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/admin_group/index.html
+[ log ] www.xlz.com/admin/admin_group/index.html [运行时间：0.183401s][吞吐率：5.45req/s] [内存消耗：5,446.16kb] [文件加载：73]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'admin_group',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.008842s ]
+[ info ] [ RUN ] app\admin\controller\AdminGroup->index[ D:\phpStudy\WWW\xlz\application\admin\traits\controller\Controller.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\xlz\public/../application/admin\view\admin_group\index.html [ array (
+  0 => 'list',
+  1 => 'count',
+  2 => 'page',
+  3 => 'numPerPage',
+) ]
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.020220s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002773s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_admin_group` [ RunTime:0.017953s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_admin_group` WHERE  `isdelete` = 0 LIMIT 1 [ RunTime:0.000923s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_admin_group` WHERE  `isdelete` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.001029s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_web_log_all` [ RunTime:0.017900s ]
+[ sql ] [ SQL ] INSERT INTO `lz_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(58.0.3029.110)' , 'http://www.xlz.com/admin/admin_group/index.html' , 'admin' , 'AdminGroup' , 'index' , 'GET' , 'a:0:{}' , 1546432664) [ RunTime:0.000945s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:37:45+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/admin_node/index.html
+[ log ] www.xlz.com/admin/admin_node/index.html [运行时间：0.186768s][吞吐率：5.35req/s] [内存消耗：5,083.48kb] [文件加载：68]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'admin_node',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.007321s ]
+[ info ] [ RUN ] app\admin\controller\AdminNode->index[ D:\phpStudy\WWW\xlz\application\admin\controller\AdminNode.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\xlz\public/../application/admin\view\admin_node\index.html [ array (
+  0 => 'modules',
+  1 => 'node',
+) ]
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.022599s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003714s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_admin_node` [ RunTime:0.020268s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_admin_node` WHERE  (  pid=0 AND isdelete=0 ) ORDER BY sort asc [ RunTime:0.036455s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_web_log_all` [ RunTime:0.019426s ]
+[ sql ] [ SQL ] INSERT INTO `lz_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(58.0.3029.110)' , 'http://www.xlz.com/admin/admin_node/index.html' , 'admin' , 'AdminNode' , 'index' , 'GET' , 'a:0:{}' , 1546432665) [ RunTime:0.001439s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:37:45+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/admin_node/index
+[ log ] www.xlz.com/admin/admin_node/index [运行时间：0.142412s][吞吐率：7.02req/s] [内存消耗：5,033.92kb] [文件加载：67]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'admin_node',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'content-length' => '22',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.xlz.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://www.xlz.com/admin/admin_node/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+  'type' => 'group',
+  'module_id' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.010459s ]
+[ info ] [ RUN ] app\admin\controller\AdminNode->index[ D:\phpStudy\WWW\xlz\application\admin\controller\AdminNode.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.021594s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003395s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_admin_node` [ RunTime:0.018733s ]
+[ sql ] [ SQL ] SELECT `group_id` FROM `lz_admin_node` WHERE  (  isdelete=0 AND level=2 AND pid='1' ) [ RunTime:0.001996s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_admin_group` [ RunTime:0.017770s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`icon`,`sort`,`status` FROM `lz_admin_group` `admin_group` WHERE  `isdelete` = 0  AND `id` IN (1,0,5,4,6,3,7,9,8) ORDER BY sort asc [ RunTime:0.001595s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_web_log_all` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] INSERT INTO `lz_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(58.0.3029.110)' , 'http://www.xlz.com/admin/admin_node/index' , 'admin' , 'AdminNode' , 'index' , 'POST' , 'a:2:{s:4:\"type\";s:5:\"group\";s:9:\"module_id\";s:1:\"1\";}' , 1546432665) [ RunTime:0.001455s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:37:45+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/admin_node/index
+[ log ] www.xlz.com/admin/admin_node/index [运行时间：0.110774s][吞吐率：9.03req/s] [内存消耗：5,108.42kb] [文件加载：68]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'admin_node',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'content-length' => '32',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.xlz.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://www.xlz.com/admin/admin_node/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+  'type' => 'node',
+  'module_id' => '1',
+  'group_id' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.007786s ]
+[ info ] [ RUN ] app\admin\controller\AdminNode->index[ D:\phpStudy\WWW\xlz\application\admin\controller\AdminNode.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.019756s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002967s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_admin_node` [ RunTime:0.017253s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_admin_node` WHERE  (  isdelete=0 AND level=2 AND pid='1' AND group_id='1' ) UNION SELECT * FROM `lz_admin_node` WHERE  (  isdelete=0 AND level>2 ) [ RunTime:0.003209s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_web_log_all` [ RunTime:0.017238s ]
+[ sql ] [ SQL ] INSERT INTO `lz_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(58.0.3029.110)' , 'http://www.xlz.com/admin/admin_node/index' , 'admin' , 'AdminNode' , 'index' , 'POST' , 'a:3:{s:4:\"type\";s:4:\"node\";s:9:\"module_id\";s:1:\"1\";s:8:\"group_id\";s:1:\"1\";}' , 1546432665) [ RunTime:0.000896s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:37:46+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/admin_role/index.html
+[ log ] www.xlz.com/admin/admin_role/index.html [运行时间：0.169048s][吞吐率：5.92req/s] [内存消耗：5,450.96kb] [文件加载：73]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'admin_role',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.008444s ]
+[ info ] [ RUN ] app\admin\controller\AdminRole->index[ D:\phpStudy\WWW\xlz\application\admin\traits\controller\Controller.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\xlz\public/../application/admin\view\admin_role\index.html [ array (
+  0 => 'list',
+  1 => 'count',
+  2 => 'page',
+  3 => 'numPerPage',
+) ]
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.020799s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002948s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_admin_role` [ RunTime:0.018133s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_admin_role` WHERE  `isdelete` = 0 LIMIT 1 [ RunTime:0.000642s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_admin_role` WHERE  `isdelete` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.000745s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_web_log_all` [ RunTime:0.018728s ]
+[ sql ] [ SQL ] INSERT INTO `lz_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(58.0.3029.110)' , 'http://www.xlz.com/admin/admin_role/index.html' , 'admin' , 'AdminRole' , 'index' , 'GET' , 'a:0:{}' , 1546432666) [ RunTime:0.000943s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:37:46+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/node_map/index.html
+[ log ] www.xlz.com/admin/node_map/index.html [运行时间：0.181814s][吞吐率：5.50req/s] [内存消耗：5,488.41kb] [文件加载：73]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'node_map',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.008104s ]
+[ info ] [ RUN ] app\admin\controller\NodeMap->index[ D:\phpStudy\WWW\xlz\application\admin\traits\controller\Controller.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\xlz\public/../application/admin\view\node_map\index.html [ array (
+  0 => 'list',
+  1 => 'count',
+  2 => 'page',
+  3 => 'numPerPage',
+) ]
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.022614s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003368s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_node_map` [ RunTime:0.017986s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_node_map` LIMIT 1 [ RunTime:0.001407s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_node_map` ORDER BY id desc LIMIT 0,20 [ RunTime:0.001147s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_web_log_all` [ RunTime:0.019206s ]
+[ sql ] [ SQL ] INSERT INTO `lz_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(58.0.3029.110)' , 'http://www.xlz.com/admin/node_map/index.html' , 'admin' , 'NodeMap' , 'index' , 'GET' , 'a:0:{}' , 1546432666) [ RunTime:0.001112s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:37:54+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/admin_node/index.html
+[ log ] www.xlz.com/admin/admin_node/index.html [运行时间：0.114814s][吞吐率：8.71req/s] [内存消耗：5,083.48kb] [文件加载：68]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'admin_node',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.008330s ]
+[ info ] [ RUN ] app\admin\controller\AdminNode->index[ D:\phpStudy\WWW\xlz\application\admin\controller\AdminNode.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\xlz\public/../application/admin\view\admin_node\index.html [ array (
+  0 => 'modules',
+  1 => 'node',
+) ]
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.020674s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003970s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_admin_node` [ RunTime:0.019509s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_admin_node` WHERE  (  pid=0 AND isdelete=0 ) ORDER BY sort asc [ RunTime:0.001386s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_web_log_all` [ RunTime:0.018437s ]
+[ sql ] [ SQL ] INSERT INTO `lz_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(58.0.3029.110)' , 'http://www.xlz.com/admin/admin_node/index.html' , 'admin' , 'AdminNode' , 'index' , 'GET' , 'a:0:{}' , 1546432674) [ RunTime:0.000916s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:37:54+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/admin_node/index
+[ log ] www.xlz.com/admin/admin_node/index [运行时间：0.123480s][吞吐率：8.10req/s] [内存消耗：5,033.92kb] [文件加载：67]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'admin_node',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'content-length' => '22',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.xlz.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://www.xlz.com/admin/admin_node/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+  'type' => 'group',
+  'module_id' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.008450s ]
+[ info ] [ RUN ] app\admin\controller\AdminNode->index[ D:\phpStudy\WWW\xlz\application\admin\controller\AdminNode.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.019264s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003304s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_admin_node` [ RunTime:0.017989s ]
+[ sql ] [ SQL ] SELECT `group_id` FROM `lz_admin_node` WHERE  (  isdelete=0 AND level=2 AND pid='1' ) [ RunTime:0.001473s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_admin_group` [ RunTime:0.017461s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`icon`,`sort`,`status` FROM `lz_admin_group` `admin_group` WHERE  `isdelete` = 0  AND `id` IN (1,0,5,4,6,3,7,9,8) ORDER BY sort asc [ RunTime:0.001402s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_web_log_all` [ RunTime:0.016948s ]
+[ sql ] [ SQL ] INSERT INTO `lz_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(58.0.3029.110)' , 'http://www.xlz.com/admin/admin_node/index' , 'admin' , 'AdminNode' , 'index' , 'POST' , 'a:2:{s:4:\"type\";s:5:\"group\";s:9:\"module_id\";s:1:\"1\";}' , 1546432674) [ RunTime:0.001082s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:37:54+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/admin_node/index
+[ log ] www.xlz.com/admin/admin_node/index [运行时间：0.113589s][吞吐率：8.80req/s] [内存消耗：5,108.42kb] [文件加载：68]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'admin_node',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'content-length' => '32',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.xlz.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://www.xlz.com/admin/admin_node/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+  'type' => 'node',
+  'module_id' => '1',
+  'group_id' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.008278s ]
+[ info ] [ RUN ] app\admin\controller\AdminNode->index[ D:\phpStudy\WWW\xlz\application\admin\controller\AdminNode.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.020780s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003486s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_admin_node` [ RunTime:0.018156s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_admin_node` WHERE  (  isdelete=0 AND level=2 AND pid='1' AND group_id='1' ) UNION SELECT * FROM `lz_admin_node` WHERE  (  isdelete=0 AND level>2 ) [ RunTime:0.002705s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_web_log_all` [ RunTime:0.017644s ]
+[ sql ] [ SQL ] INSERT INTO `lz_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(58.0.3029.110)' , 'http://www.xlz.com/admin/admin_node/index' , 'admin' , 'AdminNode' , 'index' , 'POST' , 'a:3:{s:4:\"type\";s:4:\"node\";s:9:\"module_id\";s:1:\"1\";s:8:\"group_id\";s:1:\"1\";}' , 1546432674) [ RunTime:0.001401s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:38:37+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/admin_node/index
+[ log ] www.xlz.com/admin/admin_node/index [运行时间：0.132304s][吞吐率：7.56req/s] [内存消耗：5,092.44kb] [文件加载：68]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'admin_node',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'content-length' => '32',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.xlz.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://www.xlz.com/admin/admin_node/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+  'type' => 'node',
+  'module_id' => '1',
+  'group_id' => '6',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.008059s ]
+[ info ] [ RUN ] app\admin\controller\AdminNode->index[ D:\phpStudy\WWW\xlz\application\admin\controller\AdminNode.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.021942s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012300s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_admin_node` [ RunTime:0.022519s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_admin_node` WHERE  (  isdelete=0 AND level=2 AND pid='1' AND group_id='6' ) UNION SELECT * FROM `lz_admin_node` WHERE  (  isdelete=0 AND level>2 ) [ RunTime:0.003004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_web_log_all` [ RunTime:0.019649s ]
+[ sql ] [ SQL ] INSERT INTO `lz_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(58.0.3029.110)' , 'http://www.xlz.com/admin/admin_node/index' , 'admin' , 'AdminNode' , 'index' , 'POST' , 'a:3:{s:4:\"type\";s:4:\"node\";s:9:\"module_id\";s:1:\"1\";s:8:\"group_id\";s:1:\"6\";}' , 1546432717) [ RunTime:0.001140s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:43:39+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/stu_approved/index.html
+[ log ] www.xlz.com/admin/stu_approved/index.html [运行时间：0.180739s][吞吐率：5.53req/s] [内存消耗：5,235.78kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'stu_approved',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.010883s ]
+[ info ] [ RUN ] app\admin\controller\StuApproved->index[ D:\phpStudy\WWW\xlz\application\admin\controller\StuApproved.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\xlz\public/../application/admin\view\stu_approved\index.html [ array (
+  0 => 'quanxian',
+  1 => 'page',
+  2 => 'list',
+  3 => 'count',
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.032798s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013215s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_admin_role_user` [ RunTime:0.021908s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_admin_role_user` WHERE  (  user_id=1 ) LIMIT 1 [ RunTime:0.001360s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003614s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_stu_apply` [ RunTime:0.019611s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_stu_apply` `s` INNER JOIN `lz_teaching` `t` ON `t`.`id`=`s`.`college` INNER JOIN `lz_teaching` `ta` ON `ta`.`id`=`s`.`department` INNER JOIN `lz_teaching` `tas` ON `tas`.`id`=`s`.`class` WHERE  `s`.`isdelete` = 0  AND `s`.`status` = 1  AND (  1=1 ) LIMIT 1 [ RunTime:0.002269s ]
+[ sql ] [ SQL ] SELECT `s`.*,t.catname catname1,ta.catname catname2,tas.catname catname3 FROM `lz_stu_apply` `s` INNER JOIN `lz_teaching` `t` ON `t`.`id`=`s`.`college` INNER JOIN `lz_teaching` `ta` ON `ta`.`id`=`s`.`department` INNER JOIN `lz_teaching` `tas` ON `tas`.`id`=`s`.`class` WHERE  `s`.`isdelete` = 0  AND `s`.`status` = 1  AND (  1=1 ) ORDER BY s.id desc LIMIT 0,10 [ RunTime:0.001910s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012777s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_web_log_all` [ RunTime:0.018045s ]
+[ sql ] [ SQL ] INSERT INTO `lz_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(58.0.3029.110)' , 'http://www.xlz.com/admin/stu_approved/index.html' , 'admin' , 'StuApproved' , 'index' , 'GET' , 'a:0:{}' , 1546433019) [ RunTime:0.000943s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:43:40+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/stu_apply/index.html
+[ log ] www.xlz.com/admin/stu_apply/index.html [运行时间：0.178406s][吞吐率：5.61req/s] [内存消耗：5,292.16kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'stu_apply',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.006673s ]
+[ info ] [ RUN ] app\admin\controller\StuApply->index[ D:\phpStudy\WWW\xlz\application\admin\controller\StuApply.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\xlz\public/../application/admin\view\stu_apply\index.html [ array (
+  0 => 'list',
+  1 => 'count',
+  2 => 'page',
+  3 => 'numPerPage',
+  4 => 'quanxian',
+) ]
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.024159s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011804s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_stu_apply` [ RunTime:0.022573s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_stu_apply` WHERE  `isdelete` = 0 LIMIT 1 [ RunTime:0.001062s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_stu_apply` WHERE  `isdelete` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.001476s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003090s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_admin_role_user` [ RunTime:0.018646s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_admin_role_user` WHERE  (  user_id=1 ) LIMIT 1 [ RunTime:0.001200s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012660s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_stu_apply` `s` INNER JOIN `lz_teaching` `t` ON `t`.`id`=`s`.`college` INNER JOIN `lz_teaching` `ta` ON `ta`.`id`=`s`.`department` INNER JOIN `lz_teaching` `tas` ON `tas`.`id`=`s`.`class` WHERE  `s`.`isdelete` = 0  AND `s`.`status` = 0  AND (  1=1 ) LIMIT 1 [ RunTime:0.002919s ]
+[ sql ] [ SQL ] SELECT `s`.*,t.catname catname1,ta.catname catname2,tas.catname catname3 FROM `lz_stu_apply` `s` INNER JOIN `lz_teaching` `t` ON `t`.`id`=`s`.`college` INNER JOIN `lz_teaching` `ta` ON `ta`.`id`=`s`.`department` INNER JOIN `lz_teaching` `tas` ON `tas`.`id`=`s`.`class` WHERE  `s`.`isdelete` = 0  AND `s`.`status` = 0  AND (  1=1 ) ORDER BY s.id desc LIMIT 0,10 [ RunTime:0.002737s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_web_log_all` [ RunTime:0.022099s ]
+[ sql ] [ SQL ] INSERT INTO `lz_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(58.0.3029.110)' , 'http://www.xlz.com/admin/stu_apply/index.html' , 'admin' , 'StuApply' , 'index' , 'GET' , 'a:0:{}' , 1546433020) [ RunTime:0.000901s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:43:40+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/stu_approved/index.html
+[ log ] www.xlz.com/admin/stu_approved/index.html [运行时间：0.176094s][吞吐率：5.68req/s] [内存消耗：5,235.78kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'stu_approved',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.006673s ]
+[ info ] [ RUN ] app\admin\controller\StuApproved->index[ D:\phpStudy\WWW\xlz\application\admin\controller\StuApproved.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\xlz\public/../application/admin\view\stu_approved\index.html [ array (
+  0 => 'quanxian',
+  1 => 'page',
+  2 => 'list',
+  3 => 'count',
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.038747s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003217s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_admin_role_user` [ RunTime:0.023429s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_admin_role_user` WHERE  (  user_id=1 ) LIMIT 1 [ RunTime:0.000846s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013443s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_stu_apply` [ RunTime:0.022084s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_stu_apply` `s` INNER JOIN `lz_teaching` `t` ON `t`.`id`=`s`.`college` INNER JOIN `lz_teaching` `ta` ON `ta`.`id`=`s`.`department` INNER JOIN `lz_teaching` `tas` ON `tas`.`id`=`s`.`class` WHERE  `s`.`isdelete` = 0  AND `s`.`status` = 1  AND (  1=1 ) LIMIT 1 [ RunTime:0.001674s ]
+[ sql ] [ SQL ] SELECT `s`.*,t.catname catname1,ta.catname catname2,tas.catname catname3 FROM `lz_stu_apply` `s` INNER JOIN `lz_teaching` `t` ON `t`.`id`=`s`.`college` INNER JOIN `lz_teaching` `ta` ON `ta`.`id`=`s`.`department` INNER JOIN `lz_teaching` `tas` ON `tas`.`id`=`s`.`class` WHERE  `s`.`isdelete` = 0  AND `s`.`status` = 1  AND (  1=1 ) ORDER BY s.id desc LIMIT 0,10 [ RunTime:0.001999s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012314s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_web_log_all` [ RunTime:0.021987s ]
+[ sql ] [ SQL ] INSERT INTO `lz_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(58.0.3029.110)' , 'http://www.xlz.com/admin/stu_approved/index.html' , 'admin' , 'StuApproved' , 'index' , 'GET' , 'a:0:{}' , 1546433020) [ RunTime:0.002479s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:45:03+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/pactivity/index.html
+[ log ] www.xlz.com/admin/pactivity/index.html [运行时间：0.184618s][吞吐率：5.42req/s] [内存消耗：5,275.33kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'pactivity',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.008858s ]
+[ info ] [ RUN ] app\admin\controller\Pactivity->index[ D:\phpStudy\WWW\xlz\application\admin\controller\Pactivity.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\xlz\public/../application/admin\view\pactivity\index.html [ array (
+  0 => 'quanxian',
+  1 => 'page',
+  2 => 'list',
+  3 => 'count',
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.034034s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012327s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_admin_role_user` [ RunTime:0.023068s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_admin_role_user` WHERE  (  user_id=1 ) LIMIT 1 [ RunTime:0.001135s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012826s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_activity` [ RunTime:0.021189s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_activity` WHERE  `status` IN (0,1,2)  AND (  1=1 ) LIMIT 1 [ RunTime:0.001157s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_activity` WHERE  `status` IN (0,1,2)  AND (  1=1 ) ORDER BY id desc LIMIT 0,7 [ RunTime:0.001964s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013084s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_web_log_all` [ RunTime:0.018984s ]
+[ sql ] [ SQL ] INSERT INTO `lz_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(58.0.3029.110)' , 'http://www.xlz.com/admin/pactivity/index.html' , 'admin' , 'Pactivity' , 'index' , 'GET' , 'a:0:{}' , 1546433102) [ RunTime:0.000905s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:45:07+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/activity/index.html
+[ log ] www.xlz.com/admin/activity/index.html [运行时间：0.175146s][吞吐率：5.71req/s] [内存消耗：5,521.30kb] [文件加载：73]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'activity',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.006763s ]
+[ info ] [ RUN ] app\admin\controller\Activity->index[ D:\phpStudy\WWW\xlz\application\admin\controller\Activity.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\xlz\public/../application/admin\view\activity\index.html [ array (
+  0 => 'list',
+  1 => 'count',
+  2 => 'page',
+  3 => 'numPerPage',
+  4 => 'quanxian',
+  5 => 'stu',
+) ]
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.024344s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013747s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_activity` [ RunTime:0.020642s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_activity` WHERE  `isdelete` = 0 LIMIT 1 [ RunTime:0.001813s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_activity` WHERE  `isdelete` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.002797s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011269s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_admin_role_user` [ RunTime:0.017018s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_admin_role_user` WHERE  (  user_id=1 ) LIMIT 1 [ RunTime:0.000779s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002878s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_activity` WHERE  `status` IN (3,4,5)  AND (  isdelete=0 )  AND (  1=1 ) LIMIT 1 [ RunTime:0.000973s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_activity` WHERE  `status` IN (3,4,5)  AND (  isdelete=0 )  AND (  1=1 ) ORDER BY id desc LIMIT 0,10 [ RunTime:0.001848s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_web_log_all` [ RunTime:0.020196s ]
+[ sql ] [ SQL ] INSERT INTO `lz_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(58.0.3029.110)' , 'http://www.xlz.com/admin/activity/index.html' , 'admin' , 'Activity' , 'index' , 'GET' , 'a:0:{}' , 1546433107) [ RunTime:0.002513s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:45:10+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/pactivity/index.html
+[ log ] www.xlz.com/admin/pactivity/index.html [运行时间：0.164552s][吞吐率：6.08req/s] [内存消耗：5,275.33kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'pactivity',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.008506s ]
+[ info ] [ RUN ] app\admin\controller\Pactivity->index[ D:\phpStudy\WWW\xlz\application\admin\controller\Pactivity.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\xlz\public/../application/admin\view\pactivity\index.html [ array (
+  0 => 'quanxian',
+  1 => 'page',
+  2 => 'list',
+  3 => 'count',
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.032169s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003725s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_admin_role_user` [ RunTime:0.021898s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_admin_role_user` WHERE  (  user_id=1 ) LIMIT 1 [ RunTime:0.001294s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012368s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_activity` [ RunTime:0.018411s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_activity` WHERE  `status` IN (0,1,2)  AND (  1=1 ) LIMIT 1 [ RunTime:0.000999s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_activity` WHERE  `status` IN (0,1,2)  AND (  1=1 ) ORDER BY id desc LIMIT 0,7 [ RunTime:0.001589s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011973s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_web_log_all` [ RunTime:0.017752s ]
+[ sql ] [ SQL ] INSERT INTO `lz_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(58.0.3029.110)' , 'http://www.xlz.com/admin/pactivity/index.html' , 'admin' , 'Pactivity' , 'index' , 'GET' , 'a:0:{}' , 1546433109) [ RunTime:0.001412s ]
+
+---------------------------------------------------------------
+[ 2019-01-02T20:45:12+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/stu_apply/index.html
+[ log ] www.xlz.com/admin/stu_apply/index.html [运行时间：0.165953s][吞吐率：6.03req/s] [内存消耗：5,292.16kb] [文件加载：71]
+[ info ] [ LANG ] D:\phpStudy\WWW\xlz\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'stu_apply',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.xlz.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://www.xlz.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=6felirvr26qq6hngsneupi6qn0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.007847s ]
+[ info ] [ RUN ] app\admin\controller\StuApply->index[ D:\phpStudy\WWW\xlz\application\admin\controller\StuApply.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\xlz\public/../application/admin\view\stu_apply\index.html [ array (
+  0 => 'list',
+  1 => 'count',
+  2 => 'page',
+  3 => 'numPerPage',
+  4 => 'quanxian',
+) ]
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.019870s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011838s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_stu_apply` [ RunTime:0.021293s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_stu_apply` WHERE  `isdelete` = 0 LIMIT 1 [ RunTime:0.000928s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_stu_apply` WHERE  `isdelete` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.001447s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011398s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_admin_role_user` [ RunTime:0.017659s ]
+[ sql ] [ SQL ] SELECT * FROM `lz_admin_role_user` WHERE  (  user_id=1 ) LIMIT 1 [ RunTime:0.001012s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011209s ] mysql:dbname=lzserver;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lz_stu_apply` `s` INNER JOIN `lz_teaching` `t` ON `t`.`id`=`s`.`college` INNER JOIN `lz_teaching` `ta` ON `ta`.`id`=`s`.`department` INNER JOIN `lz_teaching` `tas` ON `tas`.`id`=`s`.`class` WHERE  `s`.`isdelete` = 0  AND `s`.`status` = 0  AND (  1=1 ) LIMIT 1 [ RunTime:0.000974s ]
+[ sql ] [ SQL ] SELECT `s`.*,t.catname catname1,ta.catname catname2,tas.catname catname3 FROM `lz_stu_apply` `s` INNER JOIN `lz_teaching` `t` ON `t`.`id`=`s`.`college` INNER JOIN `lz_teaching` `ta` ON `ta`.`id`=`s`.`department` INNER JOIN `lz_teaching` `tas` ON `tas`.`id`=`s`.`class` WHERE  `s`.`isdelete` = 0  AND `s`.`status` = 0  AND (  1=1 ) ORDER BY s.id desc LIMIT 0,10 [ RunTime:0.001403s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lz_web_log_all` [ RunTime:0.018057s ]
+[ sql ] [ SQL ] INSERT INTO `lz_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(58.0.3029.110)' , 'http://www.xlz.com/admin/stu_apply/index.html' , 'admin' , 'StuApply' , 'index' , 'GET' , 'a:0:{}' , 1546433112) [ RunTime:0.000878s ]
+
+---------------------------------------------------------------

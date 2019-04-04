@@ -1,0 +1,185 @@
+{extend name="template/base" /}
+{block name="content"}
+<style>
+    .btn{
+        border-radius: 4px;
+    }
+    .btn-default {
+        background-color: #fff;
+        border-color: #ddd;
+        width: 100%;
+        border-radius: 4px;
+    }
+</style>
+
+<div class="page-container" style="margin-top: 50px;">
+    <div class="cl pd-5 bg-1 bk-gray">
+        {if condition="$quanxian eq 2"}
+        <a class="btn btn-primary radius mr-5" style="float: left" href="javascript:;" onclick="layer_open('添加活动','/admin/pactivity/edit.html','780px','600px')"><i class="Hui-iconfont"></i> 添加</a>
+        {/if}
+        <strong style="float:right;">共有数据 ：{$count}条</strong>
+        </span>
+    </div>
+
+    {if condition="$count > 0"} <!--判断是否有条数-->
+    <table class="table table-border table-bordered table-hover table-bg mt-20">
+        <thead>
+        <tr class="text-c">
+            <th width="25px">id</th>
+            <th width="200px">主题</th>
+            <th width="80px">单位</th>
+            <th width="130px">地区</th>
+            <th width="25px">人数</th>
+            <th width="110px">开始时间</th>
+            <th width="110px">结束时间</th>
+            <th width="">活动状态</th>
+            <th width="">详情页</th>
+            <th width="">方案</th>
+            <th width="240">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        {foreach as key=>$key  name="$list" id="li"}
+        <tr class="text-c">
+            <td>{$key+1}</td>       <!--id-->
+            <td>{$li.theme}</td>    <!--主题-->
+            <td>{$li.unit}</td>     <!--单位-->
+            <td>{$li.address}</td>  <!--地区-->
+            <td>{$li.number}</td>   <!--人数-->
+            <td>{:date('Y-m-d',$li.start_time)}</td>                  <!--开始时间-->
+            <td>{:date('Y-m-d',$li.over_time)}</td>                   <!--结束时间-->
+            <td>{if condition="$li.status eq 0"}<button class="btn btn-warning">审核中</button>{else}<button class="btn btn-success">已审核</button>{/if}</td><!--活动状态-->
+            <td><span class="glyphicon glyphicon-search" aria-hidden="true"></span><button class="btn btn-default" onclick="layer_open('详情页','table/id/{$li.id}','600px','600px')">查看</button></td>
+            <td><a class="btn btn-default" href="{$li.project}">方案下载</a></td><!--活动方案-->
+            <td class="f-14"><!--操作按钮-->
+
+
+                {switch $li.status}
+                {case 1}
+                    {if condition="$quanxian eq 2"}
+                        <button class="btn btn-default issue" onclick="issue({$li.id})">发布</button>
+                    {else}
+                        <button class="btn btn-success" style="width: 92%">已通过</button>
+                    {/if}
+                {/case}
+                {case 2}
+                    {if condition="$quanxian eq 2"}
+                        <button class="btn btn-danger over" onclick="over({$li.id})">结束</button>
+                        <button class="btn btn-success personnel" onclick="layer_open('申请人员','applications/id/{$li.id}','1200px','550px')">申请人员</button>
+                        <button class="btn btn-success post" onclick="layer_open('岗位申请','jobs/id/{$li.id}','1200px','550px')">岗位申请</button>
+                    {else}
+                        <button class="btn btn-success" style="width: 92%">已通过</button>
+                    {/if}
+                {/case}
+                {default}
+                    {if condition="$quanxian eq 2"}
+                    <button class="btn btn-danger" style="width: 100%;" onclick="chehui({$li.id})">撤回申请</button>
+                    {elseif  condition="$quanxian eq 1"}
+                    <button class="btn btn-success" style="width: 45%;" onclick="audit(1,{$li.id},'通过')">通过</button>
+                    <button class="btn btn-danger" style="width: 45%;" onclick="audit(4,{$li.id},'退回')">退回</button>
+                    {elseif  condition="$quanxian eq 0"}
+                    <button class="btn btn-warning" style="width: 92%">审核中</button>
+                    {/if}
+                {/switch}
+
+            </td>
+        </tr>
+        {/foreach}
+        </tbody>
+    </table>
+    <div class="page-bootstrap">{$page}</div><!--分页-->
+
+
+    {else}<!--判断是否有条数-->
+    <h1 style="text-align: center;">暂无活动</h1>
+    {/if}<!--判断是否有条数-->
+</div>
+<script>
+    function sx() {
+        location.reload()
+    }
+        //撤回申请
+        function chehui(val) {
+            $.ajax({
+                'url':'{:url("Pactivity/chehui")}',
+                'type':'post',
+                'data':{id:val},
+                'success':function(result){
+                    if(result.code=='1'){
+                        layer.msg('已撤回',function () {
+                            location.reload();
+                        });
+                    }
+                }
+            });
+        }
+
+        //三级领导专用审批
+        function audit(status,id,val){
+        //判断是否退回
+        if (status==4){
+            layer.prompt({title: '退回原因', formType: 2}, function(pass, index){
+                layer.close(index);
+                $.ajax({
+                    'url':'{:url("Pactivity/audit")}',
+                    'type':'post',
+                    'data':{reason:pass,status:status,id:id},
+                    'success':function(result){
+                        if(result.code=='1'){
+                            layer.msg('已'+val,function () {
+                                location.reload();
+                            });
+                        }
+                    }
+                });
+            });
+        }else{
+            //通过不填原因
+            $.ajax({
+                'url':'{:url("Pactivity/audit")}',
+                'type':'post',
+                'data':{status:status,id:id},
+                'success':function(result){
+                    if(result.code=='1'){
+                        layer.msg('已'+val,function () {
+                            location.reload();
+                        });
+                    }
+                }
+            });
+        }
+    }
+
+    //结束
+    function over(val){
+        $.ajax({
+            'url':'{:url("Pactivity/over")}',
+            'type':'post',
+            'data':{id:val},
+            'success':function(result){
+                if(result.code=='1'){
+                    layer.msg('已结束',function () {
+                        location.reload();
+                    });
+                }
+            }
+        });
+    }
+
+    //发布
+    function issue(val){
+        $.ajax({
+            'url':'{:url("Pactivity/issue")}',
+            'type':'post',
+            'data':{id:val},
+            'success':function(result){
+                if(result.code=='1'){
+                    layer.msg('发布成功',function () {
+                        location.reload();
+                    });
+                }
+            }
+        });
+    }
+</script>
+{/block}

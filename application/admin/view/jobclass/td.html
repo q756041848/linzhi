@@ -1,0 +1,9 @@
+<td><input type="checkbox" name="id[]" value="{$vo.id}"></td>
+<td>{$vo.id|high_light=$Request.param.id}</td>
+<td>
+    <i class="Hui-iconfont x-show" status='true'>&#xe6a1;</i>
+    &nbsp;&nbsp;&nbsp;{$vo.pname|high_light=$Request.param.pname}
+</td>
+<td>{$vo.describe|high_light=$Request.param.describe}</td>
+
+

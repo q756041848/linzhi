@@ -1,0 +1,116 @@
+{extend name="template/base" /}
+{block name="content"}
+<link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<style>
+    .htmleaf-container {
+        margin-top: 60px;
+    }
+    a {
+        color: #f1c40f;
+    }
+
+    a:hover,
+    a:active,
+    a:focus {
+        color: #dab10d;
+    }
+
+    .rating-stars {
+        width: 100%;
+        text-align: center;
+    }
+
+    .rating-stars .rating-stars-container {
+        font-size: 0px;
+    }
+
+    .rating-stars .rating-stars-container .rating-star {
+        display: inline-block;
+        font-size: 32px;
+        color: #555555;
+        cursor: pointer;
+        padding: 5px 30px;
+    }
+
+    .rating-stars .rating-stars-container .rating-star.is--active,
+    .rating-stars .rating-stars-container .rating-star.is--hover {
+        color: #f1c40f;
+    }
+
+    .rating-stars .rating-stars-container .rating-star.is--no-hover {
+        color: #555555;
+    }
+    .font d{
+        padding: 5px 39px;
+    }
+</style>
+<body>
+        <div class="htmleaf-container">
+        <div class="position-relative overflow-hidden p-3 p-md-6 m-md-3 text-center bg-light">
+        <div class="col-md-5 p-lg-5 mx-auto my-5">
+            <div class="rating-stars block">
+                <div class="rating-stars-container">
+
+                    <div  {if condition='$sel eq "D"'}class="rating-star is--active"{else} class="rating-star" {/if}  onclick="grade('D',{$id})">
+                        <i class="fa fa-star"></i>
+                    </div>
+
+                    <div {if condition='$sel eq "C"'}class="rating-star is--active"{else} class="rating-star" {/if} onclick="grade('C',{$id})">
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <div {if condition='$sel eq "B"'}class="rating-star is--active"{else} class="rating-star" {/if} onclick="grade('B',{$id})">
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <div {if condition='$sel eq "A"'}class="rating-star is--active"{else} class="rating-star" {/if} onclick="grade('A',{$id})">
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <div {if condition='$sel eq "A+"'}class="rating-star is--active"{else} class="rating-star" {/if} onclick="grade('A+',{$id})">
+                    <i class="fa fa-star"></i>
+                </div>
+                </div>
+
+            <!--<div class="font">-->
+                <!--<d>D</d>-->
+                <!--<d>C</d>-->
+                <!--<d>B</d>-->
+                <!--<d>A</d>-->
+                <!--<d>A+</d>-->
+            </div>
+
+
+            </div>
+            <br />
+            <br />
+        </div>
+    </div>
+</div>
+<script src="__STATIC__/js/click/jquery-1.11.0.min.js" type="text/javascript"></script>
+<script src="__STATIC__/js/click/jquery.rating-stars.min.js"></script>
+<script>
+    var ratingOptions = {
+        selectors: {
+            starsSelector: '.rating-stars',
+            starSelector: '.rating-star',
+            starActiveClass: 'is--active',
+            starHoverClass: 'is--hover',
+            starNoHoverClass: 'is--no-hover',
+            targetFormElementSelector: '.rating-value'
+        }
+    };
+
+    $(".rating-stars").ratingStars(ratingOptions);
+    $('div.is--active').prevAll().addClass("is--active");// 当前元素之前所有的兄弟节点
+
+    function grade(val,val2){
+        $.ajax({
+            url:'{:url("Activity/grade")}',
+            type:'post',
+            data:{grade:val,id:val2},
+            success:function (res){
+                location.reload();
+            }
+        });
+    }
+</script>
+</body>
+{/block}

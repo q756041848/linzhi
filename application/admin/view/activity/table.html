@@ -1,0 +1,120 @@
+{extend name="template/base" /}
+{block name="content"}
+<link href="__STATIC__/css/bootcss/bootstrap.min.css" rel="stylesheet">
+<style>
+    /*面板大小*/
+    .panel.panel-default {
+        width: 500px;
+        margin: auto;
+    }
+
+    /*表单*/
+    label{
+        font-weight: lighter;
+        font-family: "微软雅黑";
+        width: 100px;
+        text-align: right;
+        line-height: 34px;
+    }
+
+    input{
+        border: none;
+    }
+    /*其余*/
+    span{color: #8C8C8C;width: 300px;float: left;}
+    input[type="checkbox"] {  float: left;}
+    p {
+        margin: 10px 0px;
+        border-bottom: 1px solid #ddd;
+    }
+    p.gouxuan {width: 80%; margin-left: 100px;}
+
+    label{
+        position: relative;
+    }
+    /*<!--隐藏Nav-->*/
+    .breadcrumb{
+        display: none;
+    }
+</style>
+<body style="color:#7d7979;;background-color: #ddd;">
+<div class="panel panel-default">
+    <div class="panel-body">
+        {foreach as key=>$key  name="$list" id="li"}
+        <form id="form1" class="form-inline" enctype="multipart/form-data">
+            <!--活动主题-->
+            <p><label>活动主题：</label>
+                <input type="text" name="theme" value="{$li.theme}"  /></p>
+
+            <!--活动简介-->
+            <p>
+                <label style="height: 60px">活动简介：</label>
+                <!--<input type="text" name="intro" value="{$li.intro}"  placeholder="活动简介"/>-->
+                <textarea class="form-control" name="intro" style="width: 365px;padding: 0px;float: right;height: 60px;margin-top: 5px;border: none" rows="2">{$li.intro}</textarea>
+            </p>
+
+            <!--活动单位-->
+            <p><label>申请单位：</label>
+                <input type="text" name="unit" value="{$li.unit}"  placeholder="申请单位"/></p>
+
+            <!--活动地区-->
+            <p><label>活动地区：</label>
+                <input type="text" name="address" value="{$li.address}" placeholder="活动地区范围"/></p>
+
+            <!--活动人数-->
+            <p><label>需要人数：</label>
+                <input type="text" name="number" value="{$li.number}"  placeholder="需要人数"/></p>
+
+            <!--开始时间-->
+            <p><label>开始时间：</label>
+                <input type="text" name="start_time" value="{:date('Y-m-d H:i:s',$li.start_time)}"  placeholder="活动开始时间"/></p>
+
+            <!--结束时间-->
+            <p><label>结束时间：</label>
+                <input type="text" name="over_time" value="{:date('Y-m-d H:i:s',$li.over_time)}"  placeholder="活动结束时间"/></p>
+
+            <!--发起人-->
+            <p><label>活动状态：</label>
+                {switch $li.status}
+                    {case '0'}审核中{/case}
+                    {case 1}审核通过{/case}
+                    {case 2}已发布{/case}
+                    {case 3}活动已结束{/case}
+                    {case 4}【审核未通过】
+                        <p id="reason" style="width: 400px;margin: 0 auto;text-align: left;border: none;">退回原因：{$li.reason}</p>
+                    {/case}
+                    {case 5}已经撤回{/case}
+                {/switch}
+            </p>
+
+            <!--发起人-->
+            <p><label>审核人员：</label>
+                <input type="text" name="initiator" value="{$li.realname}"  placeholder="活动发起人"/></p>
+
+            <!--发起人-->
+            <p><label>发布人员：</label>
+                <input type="text" name="initiator" value="{$li.realname1}"  placeholder="活动发起人"/></p>
+
+            <!--发起人-->
+            <p><label>发起日期：</label>
+                <input type="text" name="initiator" value="{:date('Y-m-d H:i:s',$li.initiator_time)}"  placeholder="活动发起人"/></p>
+
+            <!--发起日期-->
+            <p><label>工作时常：</label>
+                <input type="text" name="initiator" value="{$li.sotime}"  /></p>
+
+            <!--发起人-->
+            <p><label>发起人：</label>
+                <input type="text" name="initiator" value="{$li.initiator}"  placeholder="活动发起人"/></p>
+            <br>
+            <!--活动方案-->
+            <!--http://www.lz.com/{$li.project}-->
+            <p>
+                <a href="{$li.project}" class="btn btn-default" style="display: block;">方案下载</a>
+            </p>
+        </form>
+        {/foreach}
+    </div>
+</div>
+</body>
+{/block}

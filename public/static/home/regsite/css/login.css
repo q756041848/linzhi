@@ -1,0 +1,175 @@
+.main {
+  width: 90%;
+  height: 900px;
+  margin: 0 auto;
+}
+
+.lefts {
+  position: relative;
+  width: 600px;
+  height: 100px;
+  margin-top: 5px;
+  line-height: 100px;
+  text-align: center;
+  font-size: 35px;
+  color: #007acc;
+}
+
+.login_cont {
+  position: absolute;
+  width: 400px;
+  height: 850px;
+  margin-left: 700px;
+  float: right;
+  margin-bottom: 40px;
+}
+.login_cont .input_signup,
+.login_cont .input_signin {
+  display: none;
+}
+
+.login_cont .active {
+  display: block;
+}
+
+.login_nav {
+  width: 300px;
+  height: 45px;
+  text-align: center;
+  margin-left: 30px;
+}
+
+.nav_slider {
+  display: inline-block;
+}
+
+.nav_slider a {
+  display: inline-block;
+  width: 75px;
+  line-height: 35px;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.nav_slider .focus {
+  border-bottom: 2px solid #3cf;
+}
+
+.forget {
+  width: 100%;
+  text-align: right;
+}
+
+.forget a {
+  text-decoration: none;
+}
+
+.img {
+  position: absolute;
+  width: 600px;
+  height: 500px;
+  margin-top: 100px;
+  float: left;
+}
+
+#tu li {
+  display: none;
+}
+
+#tu li:first-child {
+  display: block;
+}
+
+#tu li img {
+  width: 550px;
+}
+
+.demo--label {
+  margin: 20px 20px 0 0;
+  display: inline-block
+}
+
+.demo--radio {
+  display: none
+}
+
+.demo--radioInput {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 100%;
+  display: inline-block;
+  height: 16px;
+  vertical-align: middle;
+  width: 16px;
+  line-height: 1
+}
+
+.demo--radio:checked+.demo--radioInput:after {
+  background-color: #007acc;
+  border-radius: 100%;
+  content: "";
+  display: inline-block;
+  height: 16px;
+  margin: -0.5px;
+  width: 16px
+}
+
+.demo--checkbox.demo--radioInput,
+.demo--radio:checked+.demo--checkbox.demo--radioInput:after {
+  border-radius: 0
+}
+
+.select {
+  display: inline-block;
+  width: 130px;
+  height: 35px;
+  position: relative;
+  vertical-align: middle;
+  padding: 0;
+  overflow: hidden;
+  background-color: #fff;
+  color: #555;
+  border: 1px solid #aaa;
+  text-shadow: none;
+  border-radius: 4px;
+  transition: box-shadow 0.25s ease;
+  z-index: 2;
+}
+
+.select:hover {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+.select:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top-color: #ccc;
+  top: 14px;
+  right: 10px;
+  cursor: pointer;
+  z-index: -2;
+}
+
+.select select {
+  cursor: pointer;
+  padding: 6px;
+  width: 100%;
+  border: none;
+  background: transparent;
+  background-image: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.select select:focus {
+  outline: none;
+}
+.yanwen{
+  font-size: 12px;
+}
+.yanwen_s{
+  font-size: 12px;
+}

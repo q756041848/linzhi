@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文章详情</title>
+    <style type="text/css">
+        body{margin: 0;padding: 0;}
+        .show{
+            width: 90%;
+            height: 100%;
+            display: block;
+            margin: 0 auto;
+            border: 1px solid #6b7a88;
+            padding: 10px;
+        }
+        .back{
+            width: 180px;
+            height: 40px;
+            display: block;
+            background-color:#40AFFE;
+            color: #ffffff;
+            border-radius: 15px;
+            border:solid 0.5px #dddddd;
+            font-size: 15px;
+            margin: 20px auto 0 auto;
+        }
+    </style>
+</head>
+<body>
+<div class="show">
+    <div style="width: 100%;height: 8%;margin: 0 auto;padding: 0;border-bottom: 1px dashed #CCCCCC;text-align: center;">
+        <h2>{$list.title}</h2>
+        <p style="font-size: 12px">编辑者：{$list.realname}&nbsp;&nbsp;&nbsp;日期：{:date('Y-m-d',$list.date)}</p>
+    </div>
+    {$list.content|htmlspecialchars_decode}
+</div>
+<button class="back">返回</button>
+</body>
+<script type="text/javascript" src="__STATIC__/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="__STATIC__/lib/layer/2.4/layer.js"></script>
+<script>
+    $('.back').click(function(){
+        var index = parent.layer.getFrameIndex(window.name);
+        parent.layer.close(index);
+    });
+</script>
+</html>

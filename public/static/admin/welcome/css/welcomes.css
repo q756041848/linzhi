@@ -1,0 +1,406 @@
+body { 
+  color: #000; 
+  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial;
+  padding: 0px !important;
+  margin: 0px !important;
+  font-size:13px; 
+  direction: ltr;
+}
+
+/***
+General typography 
+***/
+h3 small, h4 small, h5 small {
+  color: #444;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+}
+
+a {
+  text-shadow: none !important;
+  color: #000;
+  text-decoration:none;
+}
+/*容器*/
+.container{
+	width: 100%;
+	background-color: #eff1f5;
+	margin-top: 40px;
+}
+.row{
+	margin-top: 5px;
+}
+.wel-cont-frame{
+	background-color: #fff;
+	height:350px;
+	margin:15px;
+}
+
+/*左侧表单*/
+.frame-user{
+	margin-left: 4%;
+	margin-right: 1.5%;
+	}
+.panel-body{
+	margin-top: 25px;
+}
+.form-group{
+	margin-bottom: 15px;
+}
+
+.profile-avatar-container {
+    position: relative;
+    /*width: 100px;
+    height: 100px;*/
+   /* margin: 0 auto;*/
+}
+.profile-user-img {
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    border: 3px solid #d2d6de;
+}
+.img-responsive{
+	  display: block;
+    max-width: 100%;
+    height: auto;
+}
+.profile-avatar-container img {
+	width: 100px;
+	height: 100px;
+  vertical-align: middle;
+}
+
+.profile-avatar-container .profile-avatar-text {
+    display: none;
+}
+
+.profile-username {
+	margin-top: 1px;
+	margin-bottom: 3px;
+    font-size: 20px;
+}
+
+.text-muted {
+/*	margin-right: 5px;*/
+    color: #777777;
+}
+label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.form-group .control-label{
+	float: left;
+	margin-right: 2px;
+}
+.form-control {
+	display: block;
+	float: left;
+  border-radius: 0;
+  box-shadow: none;
+  border-color: #d2d6de;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width:69%;
+  height: 38px;
+  font-size: 12px;
+  line-height: 1.42857143;
+  color: #555555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.form-control:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+.form-control::-moz-placeholder {
+  color: #999;
+  opacity: 1;
+}
+.form-control:-ms-input-placeholder {
+  color: #999;
+}
+.form-control::-webkit-input-placeholder {
+  color: #999;
+}
+.form-control::-ms-expand {
+  border: 0;
+  background-color: transparent;
+}
+.form-control[disabled],
+.form-control[readonly],
+fieldset[disabled] .form-control {
+  background-color: #eeeeee;
+  opacity: 1;
+}
+.form-control[disabled],
+fieldset[disabled] .form-control {
+  cursor: not-allowed;
+}
+.box-body .submits{
+	text-align: right;
+	padding-right: 40px;
+	margin-top: 40px;
+}
+	
+.pwd{
+	line-height: 25px;
+}
+#pwds:hover{
+	color: #000000;
+	text-decoration:none;
+}
+
+
+/*公告列表*/
+
+.tab-content { 
+   -webkit-border-radius: 0; 
+   -moz-border-radius: 0; 
+   border-radius: 0; 
+   padding-left:5px ;
+   padding-right: 5px;
+  /* padding: 10px;*/
+}
+/*新闻*/
+.wel-new{
+	width: 39%;
+float: left;
+/*	padding: 0 60px;*/
+}
+.wel-nav-fam{
+	padding-left: 17%;
+}
+#wel-nav{
+	margin-top: 5px;
+}
+#wel-nav li{
+border: 1px solid #ccc;
+margin-right: 15px;
+border-radius: 10px;
+float: left;
+padding: 8px 15px;
+
+}
+.active{
+color: #fff;
+background-color: #C0C0C0;
+}
+.newcont{
+	margin-left: 2%;
+	margin-right: 2%;
+	display: none;
+}
+.on{
+	display: block;
+}
+.feeds {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+.feeds li {
+	padding-right: 10px;
+  background-color: #fafafa;
+  color: #000000;
+  margin-bottom: 7px;   
+}
+
+.feeds li:before, 
+.feeds li:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+
+.feeds li:after {
+  clear: both;
+}
+
+.label {
+	margin-top: 0;
+	float: left;
+  padding-top: 4px;
+  padding-bottom: 7px;
+}
+.label-success .icon-bell{
+	padding-top: 0px;
+	margin-right: 5px;
+	font-size:15px;
+	color: #fff;
+}
+
+.feeds .cont-col2 .desc { 
+	width:75%;
+	text-overflow:ellipsis;
+	white-space:nowrap; 
+	overflow:hidden;
+ /* margin-left:35px;*/
+  padding-top: 3px;
+  padding-bottom: 6px;
+}
+.col2 .date {
+	 padding-top: 2px;
+  padding-right:4px;
+  text-align: right;
+  font-style: italic;
+  color:#c1cbd0;
+}
+
+
+/***
+待审核列表
+***/
+
+.wel-cont-frames{
+	margin-top:10px;
+	margin-bottom: 10px;
+	/*margin-right: 10px;*/
+	margin-left: 4%;
+	background-color: #fff;
+}
+.nav-pills{
+	margin-top: 5px;
+}
+.nav-pills li{
+	background-color:#adb5c3;
+	margin: 5px;
+	border-radius: 5px;
+	
+}
+.nav-pills > li:hover{
+	background-color: #8f9caf;
+}
+.nav > li > a {
+    position: relative;
+    display: block;
+    padding: 5px 10px;
+}
+.nav-pills > li > a{
+	color: #fff;
+}
+
+.nav-pills > li>a:hover{
+	background-color: #898f9a;
+	text-decoration:none;
+}
+.tabbable-custom { 
+  -webkit-border-radius: 0; 
+     -moz-border-radius: 0; 
+          border-radius: 0; 
+          margin-top: 15px;     
+   margin-bottom: 15px;  
+   margin-top: 30px;  
+}
+
+.counts{
+	text-align: center;
+	width: 80px;
+	color: #d2d4d5;
+	font-size: 28px;
+}
+.iconimg .apply_img {
+	margin-top: 0px;
+}
+/*表格*/
+/*.table{
+	margin-top: 10px;
+}*/
+/*table tr{
+	width: 100%;
+}
+table thead tr {
+	border-bottom: none;
+	display:block;
+}
+.table > thead > tr > th{
+	width: 3%;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	font-size: 15px;
+	padding: 0px;
+}*/
+#data_table thead tr th{
+	
+}
+/*table tbody {
+	display: block;
+	width: 100%;
+	}
+.table > tbody > tr > td{
+	text-align: center;
+	width: 3%;
+	height: 30px;
+	line-height:30px;
+	padding: 0px;
+}
+.table > tbody > tr > td > a{
+	color: #002DFF;
+}*/
+
+/*底部*/
+.foot{
+	margin-top: 25px;
+	color: #ccc;
+}
+.foot a{
+	color: #ccc;}
+
+
+/*分页*/
+  #pageBar {
+        text-align: right;
+        padding: 0 20px 20px 0;
+    }
+
+    .pageBtn a {
+        display: inline-block;
+        border: 1px solid #aaa;
+        padding: 2px 5px;
+        margin: 0 3px;
+        font-size: 13px;
+        background: #ECECEC;
+        color: black;
+        text-decoration: none;
+        -moz-border-radius: 2px;
+        -webkit-border-radius: 3px;
+    }
+
+    .pageBtn-selected a {
+        display: inline-block;
+        border: 1px solid #aaa;
+        padding: 2px 5px;
+        margin: 0 3px;
+        font-size: 13px;
+        background: #187BBD;
+        color: white;
+        text-decoration: none;
+        -moz-border-radius: 2px;
+        -webkit-border-radius: 3px;
+    }
+
+    .pageBtn a:hover {
+        background: #187BBD;
+        color: white;
+    }
+--------------------- 
+作者：谢小波zz 
+来源：CSDN 
+原文：https://blog.csdn.net/abc455050954/article/details/79510197 
+版权声明：本文为博主原创文章，转载请附上博文链接！

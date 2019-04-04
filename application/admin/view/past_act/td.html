@@ -1,0 +1,16 @@
+<td><input type="checkbox" name="id[]" value="{$vo.id}"></td>
+<td>{$vo.id}</td>
+<td style="max-width: 110px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">{$vo.title|high_light=$Request.param.title}</td>
+<td>{$vo.theme}</td>
+<td style="max-width: 110px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">
+    {$vo.content|high_light=$Request.param.content|htmlspecialchars_decode|strip_tags}</td>
+<td><img width="125px" src="{$vo.img}"/></td>
+<td>{if condition="$vo.grade eq ''"} 暂无评分{else/} {$vo.grade}{/if}</td>
+<td>{$vo.releasetime|date="Y-m-d H:i:s",###}</td>
+<td>{$vo.pv}</td>
+<td>{$vo.catname}</td>
+<td>{$vo.realname}</td>
+<td><a class="btn btn-primary radius mr-5" href="javascript:;" onclick="layer_open('活动详情',
+'/admin/past_act/lay?id={$vo.aid}')"><i class="Hui-iconfont"></i> 详情</a>
+</td>
+<td>{$vo.status|get_status}</td>

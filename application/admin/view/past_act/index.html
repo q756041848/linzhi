@@ -1,0 +1,50 @@
+{extend name="template/base" /}
+{block name="content"}
+<div class="page-container">
+    {include file="form" /}
+    <div class="cl pd-5 bg-1 bk-gray">
+        <span class="l">
+            {tp:menu menu="add,forbid,resume,delete,recyclebin" /}
+        </span>
+        <span class="r pt-5 pr-5">
+            共有数据 ：<strong>{$count ?? '0'}</strong> 条
+        </span>
+    </div>
+    <table class="table table-border table-bordered table-hover table-bg mt-20">
+        <thead>
+        <tr class="text-c">
+            {include file="th" /}
+            <th width="110">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        {volist name="list" id="vo"}
+        <tr class="text-c">
+            {include file="td" /}
+            <td class="f-14">
+                {if condition="$coll neq 1"}
+                {$vo.status|show_status=$vo.id}
+                {else/}
+
+                {/if}
+                {tp:menu menu='sedit'/}
+                {tp:menu menu='sdelete'/}
+
+                {if condition="$coll eq 1"}
+                <a title="评分" href="javascript:;" style="text-decoration: none;" class="ml-5" onclick="layer.open({type: 2,title:'评分',area: ['30%','30%'],content:['{:url(\'PastAct/grade\',[\'id\'=>$vo.id])}']})"
+            ><i class="Hui-iconfont Hui-iconfont-star-halfempty" ></i></a>
+                {else/}
+
+                {/if}
+
+
+
+
+            </td>
+        </tr>
+        {/volist}
+        </tbody>
+    </table>
+    <div class="page-bootstrap">{$page ?? ''}</div>
+</div>
+{/block}

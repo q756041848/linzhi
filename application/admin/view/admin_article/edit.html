@@ -1,0 +1,85 @@
+{extend name="template/base" /}
+{block name="content"}
+<div class="page-container">
+    <form class="form form-horizontal" id="form" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="id" id="id" value="{$vo.id ?? ''}">
+        <div class="row cl">
+            <label class="form-label col-xs-3 col-sm-3">标题：</label>
+            <div class="formControls col-xs-6 col-sm-6">
+                <input type="text" class="input-text" placeholder="标题" name="title" value="{$vo.title ?? ''}">
+            </div>
+            <div class="col-xs-3 col-sm-3"></div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-3 col-sm-3">内容：</label>
+            <div class="formControls col-xs-6 col-sm-6">
+                <div id="countent" style="width: 700px;">{$vo.content ?? ''}</div>
+                <textarea style="display: none" id="content" name="content"></textarea>
+            </div>
+            <div class="col-xs-3 col-sm-3"></div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-3 col-sm-3">附件：</label>
+            <div class="formControls col-xs-6 col-sm-6">
+                <input type="text" id="uploadText" style="width: 85%;" class="input-text" readonly="readonly" placeholder="{$vo.adjunct ?? '限.doc.docx.xls.xlsx.ppt.pptx.txt.rar.zip文件'}">
+                <input type="button" style="border: none;width: 70px;height: 30px;border-radius: 5px;font-size: 13px;" value="浏览">
+                <input type="file" name="adjunct" style="width: 70px;left: 85%;position: absolute;cursor: pointer;opacity: 0" onchange="document.getElementById('uploadText').value=this.value;" value="{$vo.adjunct ?? ''}"/>
+                <!--<input type="file" class="input-text" name="adjunct" datatype="*" nullmsg="请选择所上传的文件" value="{$vo.adjunct ?? ''}">-->
+            </div>
+            <div class="col-xs-3 col-sm-3"></div>
+        </div>
+        <div class="row cl">
+            <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+                <button type="submit" class="btn btn-primary radius sum">&nbsp;&nbsp;提交&nbsp;&nbsp;</button>
+                <button type="button" class="btn btn-default radius ml-20" onClick="layer_close();">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
+            </div>
+        </div>
+    </form>
+</div>
+{/block}
+{block name="script"}
+<script type="text/javascript" src="__LIB__/Validform/5.3.2/Validform.min.js"></script>
+<script type="text/javascript" src="__STATIC__/wangEditor/release/wangEditor.min.js"></script>
+<script>
+    var E = window.wangEditor;
+    var editor = new E('#countent');
+    var $text1 = $('#content');
+    editor.customConfig.onchange = function (html) {
+        $text1.val(html)
+    };
+    editor.customConfig.uploadImgShowBase64 = true;
+    editor.create();
+    $('.sum').click(function () {
+        var data = new FormData($('#form')[0]);
+        if($('#id').val()){
+            $.ajax({
+                url:"{:url('AdminArticle/edit')}",
+                type:"post",
+                data:data,
+                async:false,
+                contentType:false,
+                processData:false,
+                success:function(res){
+                    var index = parent.layer.getFrameIndex(window.name);
+                    parent.layer.close(index);
+                    parent.location.reload();
+                }
+            });
+        }else {
+            $.ajax({
+                url:"{:url('AdminArticle/add')}",
+                type:"post",
+                data:data,
+                async:false,
+                contentType:false,
+                processData:false,
+                success:function(res){
+                    var index = parent.layer.getFrameIndex(window.name);
+                    parent.layer.close(index);
+                    parent.location.reload();
+                }
+            });
+        }
+    });
+</script>
+{/block}

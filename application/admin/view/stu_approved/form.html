@@ -1,0 +1,14 @@
+<form class="mb-20" method="get" action="{:\\think\\Url::build($Request.action)}">
+    <input type="text" class="input-text" style="width:174px" placeholder="请输入学生姓名"
+           name="name" value="{$Request.param.name}" >
+   
+
+     <input type="text" class="input-text" style="width:174px" placeholder="请输入班级"
+           name="class" value="{$Request.param.class}" >
+
+           <input type="text" class="input-text" style="width:174px" placeholder="请输入联系方式"
+           name="phone" value="{$Request.param.phone}" >
+
+            <button type="submit" class="btn btn-success"><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+</form>
+

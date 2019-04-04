@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <!-- Bootstrap styles -->
+        <link rel="stylesheet" href="__STATIC__/home/news/css/bootstrap.min.css">
+        <!-- Font-Awesome -->
+        <link rel="stylesheet" href="__STATIC__/home/news/css/font-awesome/css/font-awesome.min.css">
+        <!-- Styles -->
+        <link rel="stylesheet" href="__STATIC__/home/news/css/admin.css" id="theme-styles">
+        <link rel="stylesheet" href="__STATIC__/home/news/css/layui.css" id="theme-styles">
+        <!-- <link rel="stylesheet" href="__STATIC__/home/news/css/layer.css" id="theme-styles"> -->
+        <!-- <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/layer/2.3/skin/layer.css"> -->
+        <!-- <script src="__STATIC__/home/news/js/layer2.js"></script> -->
+        <!-- <script type="text/javascript" src="https://cdn.bootcss.com/jquery.form/4.2.2/jquery.form.js"></script> -->
+        <script src="__STATIC__/home/news/js/jqform.js"></script>
+        <script type="text/javascript" src="__STATIC__/home/news/js/jq2.0.js"></script>
+        <script type="text/javascript" src="__STATIC__/home/news/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="__STATIC__/home/news/js/modernizr.js"></script>
+        <script type="text/javascript" src="__STATIC__/home/news/js/layui.js"></script>
+        <link rel="stylesheet" href="__STATIC__/home/news/css/layer.css" id="theme-styles">
+        <script type="text/javascript" src="__STATIC__/home/news/js/layerjs.js"></script>
+        <!-- <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script> -->
+        <!-- <script type="text/javascript" src="https://cdn.bootcss.com/layer/2.3/layer.js"></script> -->
+        <!-- <script src="https://cdn.bootcss.com/layer/2.2/layer.js"></script> -->
+</head>
+
+<body>
+
+    <div id="tbc_02" class="undis" style="height:600px">
+        <div class="layui-card-header">设置我的工作经历</div>
+        <form id="editwork">
+            <div class="layui-card-body" pad15>
+                <div class="layui-form" lay-filter="">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">工作地区</label>
+                        <div class="layui-input-inline">
+                            <!--隐藏id-->
+                            <input type="text" name="area" value="{$work.area}" lay-verify="area" autocomplete="area"
+                                class="layui-input">
+                            <input type="hidden" name="eid" value="{$work.eid}" lay-verify="eid" autocomplete="eid"
+                                class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">公司名称</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="company" value="{$work.company}" lay-verify="company" autocomplete="company"
+                                class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">工作职务</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="Jobduties" value="{$work.Jobduties}" lay-verify="Jobduties"
+                                autocomplete="Jobduties" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">开始时间</label>
+                        <div class="layui-input-inline">
+                            <input type="date" name="starttime" value="{$work.starttime}" lay-verify="starttime"
+                                autocomplete="starttime" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">结束时间</label>
+                        <div class="layui-input-inline">
+                            <input type="date" name="endtime" value="{$work.endtime}" lay-verify="endtime" autocomplete="endtime"
+                                class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn" lay-submit="" lay-filter="setmyinfo">确认修改</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+</body>
+
+<script>
+    $('.layui-btn').click(function () {
+        var val = new FormData($('#editwork')[0]);
+        $.ajax({
+            url: '{:url("editxiu")}',
+            type: 'post',
+            data: val,
+            async: false,
+            contentType: false,
+            processData: false,
+            success: function (res) {
+                var sta=new Date(res.starttime*1000).toLocaleDateString(); 
+                var end=new Date(res.endtime*1000).toLocaleDateString(); 
+                var txt1="<tr id="+res.eid+"><td>"+res.area+"</td>"+"<td>"+res.company+"</td>"+"<td>"+res.Jobduties+"</td>"+"<td>"+sta+"</td>"+"<td>"+end+"</td>"+"<td>"+'<a> <a onclick="updates(\'修改\','+res.eid+',\'\',800,600)" href="javascript:;"><i class="fa fa-edit updates" aria-hidden="true"></i></a><a onclick="experience_del(this,'+res.eid+',\'\',800,600)" href="javascript:;"><i class="fa fa-times" aria-hidden="true"></i></a></a>'+"</td></tr>";
+                // alert('#'+""+res.eid+"");
+                var con = $(window.parent.document).find('#'+""+res.eid+"").replaceWith(txt1);
+                var index = parent.layer.getFrameIndex(window.name);
+                parent.layer.close(index);//关闭当前页
+            }
+        })
+    })
+</script>
+
+</html>

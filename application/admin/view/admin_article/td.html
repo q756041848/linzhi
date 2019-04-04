@@ -1,0 +1,26 @@
+<td><input type="checkbox" name="id[]" value="{$vo.id}"></td>
+<td>{$key+1}</td>
+<td style="max-width: 110px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">{$vo.title|high_light=$Request.param.title}</td>
+<td class="original" style="display: none;">{$vo.content}</td>
+<td class="duplicate" style="max-width: 110px;max-height:20px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"></td>
+<td><a class="btn btn-success" href="__STATIC__/uploads/{$vo.adjunct}" target="download">附件下载</a></td>
+<td>{:date('Y-m-d',$vo.date)}</td>
+<td>{$vo.realname}</td>
+<td>{$vo.catname}</td>
+{if condition="$coll eq 1 or $coll eq 0"}
+<td>{$vo.grade}</td>
+<td>{foreach name="$user" id="zhi"}{if condition="$vo.staff_check eq $zhi.id"}{$zhi.realname}{else/}{/if}{/foreach}</td>
+<td>{if condition="$vo.check_date"}{:date('Y-m-d',$vo.check_date)}{else/}待审核{/if}</td>
+{/if}
+<td>
+    {if condition="$vo.status eq 2"}
+    <button type="button" class="btn btn-success">已通过</button>
+    {/if}
+    {if condition="$vo.status eq 1"}
+    {if condition="$coll eq 1 or $coll eq 0"}
+    <button type="button" class="btn btn-warning audit" data-id="{$vo.id}" onclick="check(this,'{$vo.id}','{$issuer}')">待审核</button>
+    {else/}
+    <button type="button" class="btn btn-warning audit">待审核</button>
+    {/if}
+    {/if}
+</td>
